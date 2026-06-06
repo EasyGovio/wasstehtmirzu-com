@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antragsservice – wasstehtmirzu.de</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #04162E;
+    --navy-mid: #0a2444;
+    --gold: #D4AF37;
+    --gold-light: rgba(212,175,55,0.15);
+    --gold-border: rgba(212,175,55,0.3);
+    --cream: #F5F0E8;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #7a7a9a;
+    --white: #ffffff;
+    --shadow: 0 4px 24px rgba(4,22,46,0.10);
+    --shadow-lg: 0 12px 48px rgba(4,22,46,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* LANGUAGE TOGGLE */
+  .lang-bar {
+    background: var(--navy);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .lang-btn {
+    background: none;
+    border: 1px solid var(--gold-border);
+    color: rgba(212,175,55,0.7);
+    padding: 0.2rem 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    font-family: 'Source Serif 4', serif;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--gold-light);
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 2.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(ellipse at 60% 40%, rgba(212,175,55,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .header-brand {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .header h1 span {
+    color: var(--gold);
+  }
+
+  .header-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .header-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* INTRO */
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .intro-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+  }
+
+  .intro-text {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* SERVICE CARDS */
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 600px) {
+    .services { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid rgba(4,22,46,0.08);
+    border-radius: 12px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.25s;
+    animation: fadeUp 0.6s ease both;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+
+  .service-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .service-desc {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+
+  .service-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .price-unit {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .service-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* HOW IT WORKS */
+  .how {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .how-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.8rem;
+    text-align: center;
+  }
+
+  .how-title span { color: var(--gold); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 580px) {
+    .steps { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .step-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .step-text {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ORDER FORM */
+  .order-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(4,22,46,0.06);
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .order-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .order-sub {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+  }
+
+  .form-row {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(4,22,46,0.15);
+    border-radius: 8px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  .form-note {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 0.3rem;
+    font-weight: 300;
+  }
+
+  .contact-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 500px) {
+    .contact-options { grid-template-columns: 1fr; }
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    border: 2px solid rgba(4,22,46,0.1);
+    background: var(--cream);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: var(--text-dark);
+  }
+
+  .contact-btn:hover {
+    border-color: var(--gold);
+    background: var(--gold-light);
+  }
+
+  .contact-btn-icon {
+    font-size: 1.4rem;
+  }
+
+  .contact-btn-text {
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .contact-btn-sub {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    margin: 1.2rem 0;
+    position: relative;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: rgba(4,22,46,0.1);
+  }
+
+  .divider::before { left: 0; }
+  .divider::after { right: 0; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--navy);
+    color: var(--gold);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(4,22,46,0.2);
+  }
+
+  .legal-note {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* TRUST */
+  .trust {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2.5rem 0;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  .trust-icon {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-text {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .s1 { animation-delay: 0.05s; }
+  .s2 { animation-delay: 0.1s; }
+  .s3 { animation-delay: 0.15s; }
+  .s4 { animation-delay: 0.2s; }
+
+  /* HIDDEN - sadece aktif dil görünür */
+  [data-lang] { display: none !important; }
+  [data-lang-inline] { display: none !important; }
+  .lang-de [data-lang="de"] { display: block !important; }
+  .lang-tr [data-lang="tr"] { display: block !important; }
+  .lang-de [data-lang-inline="de"] { display: inline !important; }
+  .lang-tr [data-lang-inline="tr"] { display: inline !important; }
+</style>
+</head>
+<body class="lang-de" id="body-root">
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('tr')">TR</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">wasstehtmirzu.de · AskMeAI Technologie</div>
+  <h1>
+    <span data-lang-inline="de">Ihr Antrag.</span>
+    <span data-lang-inline="tr">Başvurunuz.</span>
+    <br>
+    <span data-lang-inline="de">Professionell ausgefüllt.</span>
+    <span data-lang-inline="tr">Profesyonelce dolduruldu.</span>
+  </h1>
+  <p class="header-sub">
+    <span data-lang-inline="de">Wir füllen Ihre Sozialleistungsanträge auf Deutsch aus — korrekt, vollständig und innerhalb von 48 Stunden.</span>
+    <span data-lang-inline="tr">Sosyal yardım başvurularınızı Almanca olarak dolduruyoruz — doğru, eksiksiz ve 48 saat içinde.</span>
+  </p>
+  <div class="header-badges">
+    <span class="badge">
+      <span data-lang-inline="de">✓ 48h Lieferung</span>
+      <span data-lang-inline="tr">✓ 48 saat teslimat</span>
+    </span>
+    <span class="badge">
+      <span data-lang-inline="de">✓ Zweisprachig</span>
+      <span data-lang-inline="tr">✓ İki dilli hizmet</span>
+    </span>
+    <span class="badge">
+      <span data-lang-inline="de">✓ Geprüfte Expertise</span>
+      <span data-lang-inline="tr">✓ Uzman desteği</span>
+    </span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <h2 class="intro-title">
+      <span data-lang-inline="de">Vier Leistungen. Ein Service.</span>
+      <span data-lang-inline="tr">Dört hizmet. Tek platform.</span>
+    </h2>
+    <p class="intro-text">
+      <span data-lang-inline="de">Deutsche Behördenformulare sind komplex. Wir kennen die Formulare, die Fachbegriffe und die häufigsten Fehler — und füllen Ihren Antrag korrekt aus.</span>
+      <span data-lang-inline="tr">Alman resmi formları karmaşıktır. Formları, teknik terimleri ve sık yapılan hataları biliyoruz — başvurunuzu doğru şekilde dolduruyoruz.</span>
+    </p>
+  </div>
+
+  <!-- SERVICE CARDS -->
+  <div class="services">
+
+    <div class="service-card s1">
+      <span class="service-tag">
+        <span data-lang-inline="de">Beliebt</span>
+        <span data-lang-inline="tr">Popüler</span>
+      </span>
+      <div class="service-icon">🏦</div>
+      <div class="service-name">
+        <span data-lang-inline="de">Rentenantrag</span>
+        <span data-lang-inline="tr">Emeklilik Başvurusu</span>
+      </div>
+      <p class="service-desc">
+        <span data-lang-inline="de">Grundrente, Altersrente, Erwerbsminderungsrente — wir füllen Ihren Rentenantrag vollständig und korrekt aus.</span>
+        <span data-lang-inline="tr">Grundrente, yaşlılık aylığı, iş göremezlik aylığı — emeklilik başvurunuzu eksiksiz dolduruyoruz.</span>
+      </p>
+      <div class="service-price">
+        <span class="price-amount">24,90 €</span>
+        <span class="price-unit">
+          <span data-lang-inline="de">pro Antrag</span>
+          <span data-lang-inline="tr">başvuru başına</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="service-card s2">
+      <div class="service-icon">🏥</div>
+      <div class="service-name">
+        <span data-lang-inline="de">Pflegegrad Antrag</span>
+        <span data-lang-inline="tr">Bakım Derecesi Başvurusu</span>
+      </div>
+      <p class="service-desc">
+        <span data-lang-inline="de">Erstantrag oder Höherstufung — wir bereiten Ihren Pflegegrad-Antrag fachkundig vor.</span>
+        <span data-lang-inline="tr">İlk başvuru veya derece yükseltme — Pflegegrad başvurunuzu uzman bilgisiyle hazırlıyoruz.</span>
+      </p>
+      <div class="service-price">
+        <span class="price-amount">24,90 €</span>
+        <span class="price-unit">
+          <span data-lang-inline="de">pro Antrag</span>
+          <span data-lang-inline="tr">başvuru başına</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="service-card s3">
+      <div class="service-icon">👶</div>
+      <div class="service-name">
+        <span data-lang-inline="de">Kindergeld / Kinderzuschlag</span>
+        <span data-lang-inline="tr">Çocuk Parası Başvurusu</span>
+      </div>
+      <p class="service-desc">
+        <span data-lang-inline="de">Kindergeld und Kinderzuschlag — wir füllen Ihren Antrag bei der Familienkasse aus.</span>
+        <span data-lang-inline="tr">Kindergeld ve Kinderzuschlag başvurularınızı Familienkasse için hazırlıyoruz.</span>
+      </p>
+      <div class="service-price">
+        <span class="price-amount">14,90 €</span>
+        <span class="price-unit">
+          <span data-lang-inline="de">pro Antrag</span>
+          <span data-lang-inline="tr">başvuru başına</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="service-card s4">
+      <span class="service-tag">
+        <span data-lang-inline="de">Expertenservice</span>
+        <span data-lang-inline="tr">Uzman hizmet</span>
+      </span>
+      <div class="service-icon">⚖️</div>
+      <div class="service-name">
+        <span data-lang-inline="de">Widerspruch einlegen</span>
+        <span data-lang-inline="tr">İtiraz Dilekçesi</span>
+      </div>
+      <p class="service-desc">
+        <span data-lang-inline="de">Bescheid abgelehnt? Wir formulieren Ihren Widerspruch fachlich korrekt und fristgerecht.</span>
+        <span data-lang-inline="tr">Başvurunuz reddedildi mi? İtiraz dilekçenizi zamanında ve doğru şekilde hazırlıyoruz.</span>
+      </p>
+      <div class="service-price">
+        <span class="price-amount">44,90 €</span>
+        <span class="price-unit">
+          <span data-lang-inline="de">pro Widerspruch</span>
+          <span data-lang-inline="tr">itiraz başına</span>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how">
+    <h2 class="how-title">
+      <span data-lang-inline="de">So einfach <span>funktioniert es</span></span>
+      <span data-lang-inline="tr">Bu kadar <span>basit</span></span>
+    </h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">
+          <span data-lang-inline="de">Anfrage stellen</span>
+          <span data-lang-inline="tr">Talepte bulun</span>
+        </div>
+        <p class="step-text">
+          <span data-lang-inline="de">Per E-Mail oder WhatsApp — schildern Sie uns Ihre Situation.</span>
+          <span data-lang-inline="tr">E-posta veya WhatsApp ile durumunuzu anlatın.</span>
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">
+          <span data-lang-inline="de">Daten übermitteln</span>
+          <span data-lang-inline="tr">Bilgileri gönderin</span>
+        </div>
+        <p class="step-text">
+          <span data-lang-inline="de">Wir senden Ihnen eine kurze Checkliste — nur das Nötigste.</span>
+          <span data-lang-inline="tr">Size kısa bir kontrol listesi gönderiyoruz — sadece gerekli bilgiler.</span>
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">
+          <span data-lang-inline="de">Antrag erhalten</span>
+          <span data-lang-inline="tr">Başvuruyu alın</span>
+        </div>
+        <p class="step-text">
+          <span data-lang-inline="de">Innerhalb von 48 Stunden erhalten Sie Ihren fertig ausgefüllten Antrag als PDF.</span>
+          <span data-lang-inline="tr">48 saat içinde doldurulmuş başvurunuzu PDF olarak alırsınız.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="trust-item">
+      <span class="trust-icon">🔒</span>
+      <span data-lang-inline="de">DSGVO-konform</span>
+      <span data-lang-inline="tr">DSGVO uyumlu</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🇩🇪</span>
+      <span data-lang-inline="de">Deutsch & Türkisch</span>
+      <span data-lang-inline="tr">Almanca & Türkçe</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">⏱</span>
+      <span data-lang-inline="de">48h Liefergarantie</span>
+      <span data-lang-inline="tr">48 saat garanti</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">✉️</span>
+      <span data-lang-inline="de">Persönliche Betreuung</span>
+      <span data-lang-inline="tr">Kişisel destek</span>
+    </div>
+  </div>
+
+  <!-- ORDER FORM -->
+  <div class="order-section">
+    <h2 class="order-title">
+      <span data-lang-inline="de">Jetzt Anfrage stellen</span>
+      <span data-lang-inline="tr">Hemen talep oluşturun</span>
+    </h2>
+    <p class="order-sub">
+      <span data-lang-inline="de">Wählen Sie Ihren Weg — wir melden uns innerhalb von 2 Stunden.</span>
+      <span data-lang-inline="tr">İletişim yönteminizi seçin — 2 saat içinde size dönüyoruz.</span>
+    </p>
+
+    <!-- CONTACT OPTIONS -->
+    <div class="contact-options">
+      <a href="https://wa.me/49XXXXXXXXXX" class="contact-btn" target="_blank">
+        <span class="contact-btn-icon">💬</span>
+        <div>
+          <div class="contact-btn-text">WhatsApp</div>
+          <div class="contact-btn-sub">
+            <span data-lang-inline="de">Direkt schreiben</span>
+            <span data-lang-inline="tr">Direkt yazın</span>
+          </div>
+        </div>
+      </a>
+      <a href="mailto:service@wasstehtmirzu.de" class="contact-btn">
+        <span class="contact-btn-icon">✉️</span>
+        <div>
+          <div class="contact-btn-text">E-Mail</div>
+          <div class="contact-btn-sub">
+            <span data-lang-inline="de">service@wasstehtmirzu.de</span>
+            <span data-lang-inline="tr">service@wasstehtmirzu.de</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="divider">
+      <span data-lang-inline="de">oder Formular ausfüllen</span>
+      <span data-lang-inline="tr">veya formu doldurun</span>
+    </div>
+
+    <!-- FORM -->
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-row">
+          <label class="form-label">
+            <span data-lang-inline="de">Vorname & Nachname</span>
+            <span data-lang-inline="tr">Ad & Soyad</span>
+          </label>
+          <input type="text" class="form-input" required
+            placeholder="Max Mustermann">
+        </div>
+        <div class="form-row">
+          <label class="form-label">E-Mail</label>
+          <input type="email" class="form-input" required
+            placeholder="ihre@email.de">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">
+          <span data-lang-inline="de">Gewünschte Leistung</span>
+          <span data-lang-inline="tr">İstediğiniz hizmet</span>
+        </label>
+        <select class="form-select" required>
+          <option value="">
+            -- Bitte wählen / Lütfen seçin --
+          </option>
+          <option value="rente">Rentenantrag / Emeklilik Başvurusu (24,90 €)</option>
+          <option value="pflege">Pflegegrad Antrag / Bakım Derecesi (24,90 €)</option>
+          <option value="kindergeld">Kindergeld / Çocuk Parası (14,90 €)</option>
+          <option value="widerspruch">Widerspruch / İtiraz Dilekçesi (44,90 €)</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">
+          <span data-lang-inline="de">Kurze Beschreibung Ihrer Situation</span>
+          <span data-lang-inline="tr">Durumunuzun kısa açıklaması</span>
+        </label>
+        <textarea class="form-textarea"
+          placeholder="z.B. Ich bin 67 Jahre alt, lebe in Berlin und möchte Grundrente beantragen..."></textarea>
+        <p class="form-note">
+          <span data-lang-inline="de">Keine persönlichen Dokumente bitte — nur eine kurze Schilderung.</span>
+          <span data-lang-inline="tr">Lütfen kişisel belge göndermeyin — kısa bir açıklama yeterli.</span>
+        </p>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span data-lang-inline="de">Anfrage absenden →</span>
+        <span data-lang-inline="tr">Talebi gönder →</span>
+      </button>
+    </form>
+
+    <p class="legal-note">
+      <span data-lang-inline="de">Dieser Service ist eine Ausfüllhilfe und stellt keine Rechtsberatung dar. · DSGVO-konform · AskMeAI Technologie Ltd. Şti.</span>
+      <span data-lang-inline="tr">Bu hizmet bir doldurma yardımıdır ve hukuki danışmanlık niteliği taşımaz. · DSGVO uyumlu · AskMeAI Teknoloji Ltd. Şti.</span>
+    </p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">wasstehtmirzu.de · AskMeAI Teknoloji</div>
+  <p class="footer-text">© 2026 AskMeAI Teknoloji Ltd. Şti. · Manisa, Türkiye · DSGVO / KVKK</p>
+</footer>
+
+<script>
+  // LANGUAGE DETECTION & SWITCHING
+  function setLang(lang) {
+    document.getElementById('body-root').className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // AUTO DETECT
+  (function() {
+    const browserLang = navigator.language || navigator.userLanguage || 'de';
+    if (browserLang.startsWith('tr')) {
+      document.getElementById('body-root').className = 'lang-tr';
+      const btns = document.querySelectorAll('.lang-btn');
+      btns[0].classList.remove('active');
+      btns[1].classList.add('active');
+    }
+  })();
+
+  // FORM SUBMIT
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    const isDE = document.getElementById('body-root').className === 'lang-de';
+    btn.textContent = isDE ? 'Wird gesendet...' : 'Gönderiliyor...';
+    setTimeout(() => {
+      btn.textContent = isDE ? '✓ Anfrage eingegangen!' : '✓ Talebiniz alındı!';
+      btn.style.background = '#1a5c2e';
+    }, 1200);
+  }
+</script>
+</body>
+</html>
