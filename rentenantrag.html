@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-lang-title="de">Rentenantrag stellen 2026: Schritt für Schritt erklärt – wasstehtmirzu.com</title>
+<meta name="description" content="Rentenantrag richtig stellen: Wer hat Anspruch, welche Unterlagen brauchen Sie, wie läuft der Prozess ab? Alles verständlich erklärt.">
+<link rel="canonical" href="https://wasstehtmirzu.com/rentenantrag">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #04162E;
+    --navy-mid: #0a2444;
+    --gold: #D4AF37;
+    --gold-light: rgba(212,175,55,0.15);
+    --gold-border: rgba(212,175,55,0.3);
+    --cream: #F5F0E8;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #7a7a9a;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.8;
+  }
+  /* LANG */
+  [data-lang] { display: none !important; }
+  [data-lang-inline] { display: none !important; }
+  .lang-de [data-lang="de"] { display: block !important; }
+  .lang-tr [data-lang="tr"] { display: block !important; }
+  .lang-de [data-lang-inline="de"] { display: inline !important; }
+  .lang-tr [data-lang-inline="tr"] { display: inline !important; }
+
+  /* LANG BAR */
+  .lang-bar {
+    background: var(--navy);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid var(--gold-border);
+    color: rgba(212,175,55,0.7);
+    padding: 0.2rem 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    font-family: 'Source Serif 4', serif;
+    transition: all 0.2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--gold-light);
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .site-header .back {
+    font-size: 0.8rem;
+    color: rgba(212,175,55,0.6);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+  }
+  .site-header .back:hover { color: var(--gold); }
+
+  /* HERO */
+  .article-hero {
+    background: var(--navy);
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 140%; height: 200%;
+    background: radial-gradient(ellipse at 60% 40%, rgba(212,175,55,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .article-category {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .article-hero p {
+    font-size: 1.05rem;
+    color: rgba(245,240,232,0.75);
+    max-width: 580px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  .article-meta {
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(212,175,55,0.5);
+    letter-spacing: 0.1em;
+  }
+
+  /* CONTENT */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  /* TOC */
+  .toc {
+    background: white;
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 12px rgba(4,22,46,0.07);
+  }
+  .toc-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .toc ol {
+    padding-left: 1.2rem;
+  }
+  .toc li {
+    margin-bottom: 0.4rem;
+  }
+  .toc a {
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+  }
+  .toc a:hover { color: var(--gold); }
+
+  /* SECTIONS */
+  .article-section {
+    margin-bottom: 3rem;
+  }
+  .article-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(4,22,46,0.08);
+  }
+  .article-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 1.5rem 0 0.6rem;
+  }
+  .article-section p {
+    color: var(--text-mid);
+    font-size: 0.97rem;
+    margin-bottom: 1rem;
+  }
+  .article-section ul, .article-section ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .article-section li {
+    color: var(--text-mid);
+    font-size: 0.97rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 8px rgba(4,22,46,0.06);
+  }
+  .highlight-box p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: #fff8e6;
+    border-left: 4px solid #e6a817;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .warning-box p { margin: 0; font-size: 0.95rem; color: #7a5500; }
+
+  /* STEPS */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .steps li::before {
+    content: counter(step);
+    background: var(--navy);
+    color: var(--gold);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .steps li span {
+    color: var(--text-mid);
+    font-size: 0.97rem;
+  }
+  .steps li strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 140%; height: 200%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .cta-section p {
+    color: rgba(245,240,232,0.7);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .price-badge {
+    display: inline-block;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FORM */
+  .contact-form-wrap {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 24px rgba(4,22,46,0.1);
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-row { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+  .form-input, .form-select, .form-textarea {
+    border: 1px solid rgba(4,22,46,0.15);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    font-family: 'Source Serif 4', serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    width: 100%;
+    outline: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .submit-btn {
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+  .submit-btn:hover { background: #e8cc6a; transform: translateY(-1px); }
+  .form-note { font-size: 0.78rem; color: var(--text-light); margin-top: 0.8rem; text-align: center; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    margin-top: 4rem;
+  }
+  .footer a { color: rgba(212,175,55,0.6); text-decoration: none; margin: 0 0.7rem; }
+  .footer a:hover { color: var(--gold); }
+  .footer-brand { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.5rem; }
+
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .article-wrap { padding: 2rem 1rem; }
+    .cta-section { padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body class="lang-de" id="body-root">
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('de',this)">DE</button>
+  <button class="lang-btn" onclick="setLang('tr',this)">TR</button>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <a href="/">wasstehtmirzu.com</a>
+  <a href="/" class="back">
+    <span data-lang-inline="de">← Zurück zur Übersicht</span>
+    <span data-lang-inline="tr">← Ana sayfaya dön</span>
+  </a>
+</header>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <div class="article-category">
+    <span data-lang-inline="de">Rentenantrag · Schritt-für-Schritt-Guide</span>
+    <span data-lang-inline="tr">Emeklilik Başvurusu · Adım Adım Rehber</span>
+  </div>
+
+  <h1>
+    <span data-lang-inline="de">Rentenantrag 2026: Alles, was Sie wissen müssen</span>
+    <span data-lang-inline="tr">2026 Emeklilik Başvurusu: Bilmeniz Gereken Her Şey</span>
+  </h1>
+
+  <p>
+    <span data-lang-inline="de">Wann können Sie Rente beantragen? Welche Unterlagen brauchen Sie? Wie läuft das Verfahren ab? Dieser Leitfaden erklärt alles — verständlich und vollständig.</span>
+    <span data-lang-inline="tr">Ne zaman emeklilik başvurusu yapabilirsiniz? Hangi belgelere ihtiyacınız var? Süreç nasıl işliyor? Bu rehber her şeyi açıklıyor — anlaşılır ve eksiksiz.</span>
+  </p>
+  <div class="article-meta">
+    <span data-lang-inline="de">Zuletzt aktualisiert: Juni 2026 · Lesedauer: ca. 8 Minuten</span>
+    <span data-lang-inline="tr">Son güncelleme: Haziran 2026 · Okuma süresi: yaklaşık 8 dakika</span>
+  </div>
+</div>
+
+<!-- ARTICLE CONTENT -->
+<div class="article-wrap">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">
+      <span data-lang-inline="de">Inhalt</span>
+      <span data-lang-inline="tr">İçindekiler</span>
+    </div>
+    <div data-lang="de">
+      <ol>
+        <li><a href="#anspruch">Wer hat Anspruch auf Rente?</a></li>
+        <li><a href="#rentenarten">Die wichtigsten Rentenarten</a></li>
+        <li><a href="#unterlagen">Notwendige Unterlagen</a></li>
+        <li><a href="#ablauf">Der Antragsprozess Schritt für Schritt</a></li>
+        <li><a href="#fristen">Fristen & wichtige Termine</a></li>
+        <li><a href="#fehler">Häufige Fehler vermeiden</a></li>
+        <li><a href="#besonderheiten">Besonderheiten für Migranten</a></li>
+        <li><a href="#antrag">Jetzt Antrag stellen lassen</a></li>
+      </ol>
+    </div>
+    <div data-lang="tr">
+      <ol>
+        <li><a href="#anspruch">Emekliliğe kim hak kazanır?</a></li>
+        <li><a href="#rentenarten">En önemli emeklilik türleri</a></li>
+        <li><a href="#unterlagen">Gerekli belgeler</a></li>
+        <li><a href="#ablauf">Başvuru süreci adım adım</a></li>
+        <li><a href="#fristen">Süreler ve önemli tarihler</a></li>
+        <li><a href="#fehler">Sık yapılan hatalar</a></li>
+        <li><a href="#besonderheiten">Göçmenler için özel durumlar</a></li>
+        <li><a href="#antrag">Şimdi başvuru yaptırın</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 1. ANSPRUCH -->
+  <div class="article-section" id="anspruch">
+    <div data-lang="de">
+      <h2>1. Wer hat Anspruch auf Rente?</h2>
+      <p>In Deutschland haben Sie grundsätzlich Anspruch auf Altersrente, wenn Sie mindestens <strong>5 Jahre in die gesetzliche Rentenversicherung eingezahlt haben</strong> (allgemeine Wartezeit). Je nach Rentenart gelten unterschiedliche Voraussetzungen.</p>
+      <h3>Regelaltersrente</h3>
+      <p>Die Regelaltersrente erhalten Sie mit Erreichen der Regelaltersgrenze — aktuell <strong>67 Jahre</strong> für alle Jahrgänge ab 1964. Für frühere Jahrgänge gelten Übergangsregelungen.</p>
+      <h3>Altersrente für langjährig Versicherte</h3>
+      <p>Wer mindestens <strong>35 Versicherungsjahre</strong> vorweisen kann, darf ab 63 Jahren (mit Abzügen) oder ab 65 Jahren (ohne Abzüge) in Rente gehen.</p>
+      <h3>Altersrente für besonders langjährig Versicherte</h3>
+      <p>Mit <strong>45 Versicherungsjahren</strong> können Sie ohne Abzüge mit 63 Jahren in Rente gehen — die sogenannte „Rente mit 63".</p>
+      <div class="highlight-box">
+        <p>💡 <strong>Gut zu wissen:</strong> Auch Zeiten der Kindererziehung, Pflege von Angehörigen, Arbeitslosigkeit und Krankheit können als Versicherungszeiten angerechnet werden.</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>1. Emekliliğe kim hak kazanır?</h2>
+      <p>Almanya'da yasal emeklilik sigortasına (gesetzliche Rentenversicherung) en az <strong>5 yıl prim ödemiş olmanız</strong> halinde genel olarak emeklilik hakkı kazanırsınız (genel bekleme süresi). Emeklilik türüne göre farklı koşullar geçerlidir.</p>
+      <h3>Yasal emeklilik yaşı (Regelaltersrente)</h3>
+      <p>1964 ve sonrası doğumlular için emeklilik yaşı <strong>67'dir</strong>. Daha önceki doğum yılları için geçiş düzenlemeleri uygulanmaktadır.</p>
+      <h3>Uzun süreli sigortalılar için emeklilik</h3>
+      <p>En az <strong>35 sigorta yılı</strong> olanlar, 63 yaşından itibaren (kesinti ile) ya da 65 yaşından itibaren (kesintisiz) emekli olabilir.</p>
+      <h3>Çok uzun süreli sigortalılar için emeklilik</h3>
+      <p><strong>45 sigorta yılı</strong> olanlar, 63 yaşında herhangi bir kesinti olmaksızın emekli olabilir — buna "63'te emeklilik" denir.</p>
+      <div class="highlight-box">
+        <p>💡 <strong>Bilmeniz gereken:</strong> Çocuk yetiştirme dönemleri, akraba bakımı, işsizlik ve hastalık süreleri de sigorta süresi olarak sayılabilir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. RENTENARTEN -->
+  <div class="article-section" id="rentenarten">
+    <div data-lang="de">
+      <h2>2. Die wichtigsten Rentenarten im Überblick</h2>
+      <ul>
+        <li><strong>Regelaltersrente</strong> — die häufigste Form, ab Regelaltersgrenze</li>
+        <li><strong>Altersrente für langjährig Versicherte</strong> — ab 35 Versicherungsjahren</li>
+        <li><strong>Altersrente für besonders langjährig Versicherte</strong> — ab 45 Jahren (Rente mit 63)</li>
+        <li><strong>Altersrente für schwerbehinderte Menschen</strong> — ab GdB 50, mit 60 Jahren möglich</li>
+        <li><strong>Erwerbsminderungsrente</strong> — bei dauerhafter Einschränkung der Arbeitsfähigkeit</li>
+        <li><strong>Witwen-/Witwerrente</strong> — nach dem Tod des Ehepartners</li>
+        <li><strong>Grundrente</strong> — für Menschen mit niedrigen Rentenansprüchen nach 33+ Jahren</li>
+      </ul>
+      <div class="highlight-box">
+        <p>💡 Die Grundrente wird seit 2021 automatisch geprüft — Sie müssen keinen gesonderten Antrag stellen. Trotzdem lohnt es sich, den Bescheid prüfen zu lassen.</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>2. En önemli emeklilik türlerine genel bakış</h2>
+      <ul>
+        <li><strong>Regelaltersrente</strong> — en yaygın türü, yasal emeklilik yaşından itibaren</li>
+        <li><strong>Uzun süreli sigortalı emekliliği</strong> — 35 sigorta yılından itibaren</li>
+        <li><strong>Çok uzun süreli sigortalı emekliliği</strong> — 45 yıldan itibaren (63'te emeklilik)</li>
+        <li><strong>Engelli emekliliği</strong> — GdB 50 ile 60 yaşından itibaren mümkün</li>
+        <li><strong>İş göremezlik aylığı</strong> — kalıcı çalışma gücü kaybında</li>
+        <li><strong>Dul aylığı</strong> — eşin vefatı durumunda</li>
+        <li><strong>Grundrente</strong> — 33+ yıl çalışıp düşük emeklilik hakkı olanlara ek ödeme</li>
+      </ul>
+      <div class="highlight-box">
+        <p>💡 Grundrente, 2021'den itibaren otomatik olarak hesaplanmaktadır — ayrıca başvuru yapmanız gerekmez. Ancak bildirimi kontrol ettirmekte fayda var.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. UNTERLAGEN -->
+  <div class="article-section" id="unterlagen">
+    <div data-lang="de">
+      <h2>3. Notwendige Unterlagen</h2>
+      <p>Folgende Dokumente benötigen Sie für den Rentenantrag:</p>
+      <h3>Pflichtunterlagen</h3>
+      <ul>
+        <li>Personalausweis oder Reisepass (Kopie)</li>
+        <li>Sozialversicherungsausweis / Rentenversicherungsnummer</li>
+        <li>Geburtsurkunde</li>
+        <li>Heiratsurkunde (falls verheiratet)</li>
+        <li>Bankverbindung (IBAN)</li>
+        <li>Steuernummer oder Steuer-ID</li>
+      </ul>
+      <h3>Je nach Situation zusätzlich</h3>
+      <ul>
+        <li>Nachweise über Kindererziehungszeiten (Geburtsurkunden der Kinder)</li>
+        <li>Nachweise über ausländische Versicherungszeiten (z.B. aus der Türkei)</li>
+        <li>Schwerbehindertenausweis (falls vorhanden)</li>
+        <li>Nachweise über Pflegezeiten</li>
+        <li>Zeugnisse/Nachweise über Ausbildungszeiten</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Wichtig:</strong> Fehlende Unterlagen sind der häufigste Grund für Verzögerungen. Legen Sie alle Dokumente vollständig vor — sonst verlängert sich die Bearbeitungszeit erheblich.</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>3. Gerekli belgeler</h2>
+      <p>Emeklilik başvurusu için aşağıdaki belgeler gereklidir:</p>
+      <h3>Zorunlu belgeler</h3>
+      <ul>
+        <li>Kimlik kartı veya pasaport (fotokopi)</li>
+        <li>Sosyal sigorta kartı / emeklilik sigorta numarası</li>
+        <li>Doğum belgesi</li>
+        <li>Evlilik cüzdanı (evliyseniz)</li>
+        <li>Banka hesap bilgileri (IBAN)</li>
+        <li>Vergi numarası veya Steuer-ID</li>
+      </ul>
+      <h3>Duruma göre ek belgeler</h3>
+      <ul>
+        <li>Çocuk yetiştirme sürelerine ilişkin belgeler (çocukların doğum belgeleri)</li>
+        <li>Yurt dışı sigorta sürelerine ilişkin belgeler (örn. Türkiye'den)</li>
+        <li>Engellilik kartı (varsa)</li>
+        <li>Bakım sürelerine ilişkin belgeler</li>
+        <li>Eğitim/mesleki uygulamalı eğitime dair belgeler</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Önemli:</strong> Eksik belgeler, gecikmelerin en sık nedenidir. Tüm belgeleri eksiksiz sunun — aksi hâlde işlem süresi önemli ölçüde uzar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ABLAUF -->
+  <div class="article-section" id="ablauf">
+    <div data-lang="de">
+      <h2>4. Der Antragsprozess Schritt für Schritt</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Rentenbeginn planen</strong>
+            <span>Überlegen Sie, ab wann Sie die Rente beziehen möchten. Beachten Sie: Die Rente wird frühestens ab dem Monat gezahlt, in dem Sie den Antrag stellen — keine rückwirkende Zahlung (außer in Ausnahmefällen).</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Rentenauskunft einholen</strong>
+            <span>Rufen Sie Ihren aktuellen Rentenanspruch über das Deutsche Rentenversicherungs-Portal ab oder fordern Sie eine schriftliche Renteninformation an. So wissen Sie, was Sie erwartet.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Unterlagen zusammenstellen</strong>
+            <span>Sammeln Sie alle notwendigen Dokumente (siehe Abschnitt 3). Beantragen Sie fehlende Nachweise rechtzeitig — das kann Wochen dauern.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Antrag stellen</strong>
+            <span>Sie können den Antrag online (über das DRV-Portal), per Post oder persönlich bei der Deutschen Rentenversicherung stellen. Zuständig ist in der Regel die DRV Bund oder die regionale DRV.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Bearbeitungszeit abwarten</strong>
+            <span>Die Bearbeitungszeit beträgt durchschnittlich 3 Monate. Bei vollständigen Unterlagen geht es meist schneller.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Rentenbescheid prüfen</strong>
+            <span>Prüfen Sie den Bescheid sorgfältig. Bei Fehlern oder Unstimmigkeiten haben Sie einen Monat Zeit, Widerspruch einzulegen.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div data-lang="tr">
+      <h2>4. Başvuru süreci adım adım</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Emeklilik başlangıcını planlayın</strong>
+            <span>Emekliliğe ne zaman başlamak istediğinizi belirleyin. Dikkat: Emeklilik aylığı en erken başvuru yaptığınız aydan itibaren ödenir — geriye dönük ödeme yapılmaz (istisnalar hariç).</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Emeklilik bilgisi alın</strong>
+            <span>Deutsche Rentenversicherung portalından mevcut emeklilik hakkınızı öğrenin ya da yazılı bilgi talep edin. Bu sayede ne bekleyeceğinizi bilirsiniz.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Belgeleri toplayın</strong>
+            <span>Tüm gerekli belgeleri hazırlayın (bkz. Bölüm 3). Eksik belgeleri zamanında talep edin — bu haftalar sürebilir.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Başvuru yapın</strong>
+            <span>Başvuruyu DRV portalı üzerinden çevrimiçi, posta yoluyla veya Deutsche Rentenversicherung şubesine bizzat giderek yapabilirsiniz.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>İşlem süresini bekleyin</strong>
+            <span>Ortalama işlem süresi 3 aydır. Belgeler eksiksizse genellikle daha hızlı sonuçlanır.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Emeklilik bildirimini inceleyin</strong>
+            <span>Bildirimi dikkatlice inceleyin. Hata veya tutarsızlık olması durumunda bir ay içinde itiraz (Widerspruch) hakkınız bulunmaktadır.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 5. FRISTEN -->
+  <div class="article-section" id="fristen">
+    <div data-lang="de">
+      <h2>5. Fristen & wichtige Termine</h2>
+      <ul>
+        <li><strong>3 Monate vor Rentenbeginn:</strong> Antrag einreichen — so startet die Zahlung pünktlich zum Wunschtermin</li>
+        <li><strong>Keine Rückwirkung:</strong> Wer zu spät beantragt, verliert Monate — Rente wird erst ab Antragstellung gezahlt</li>
+        <li><strong>1 Monat Widerspruchsfrist:</strong> Nach Erhalt des Rentenbescheids bei Fehlern</li>
+        <li><strong>Jährliche Rentenanpassung:</strong> Üblicherweise zum 1. Juli — der aktuelle Rentenwert steigt regelmäßig</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Frist verpassen ist teuer:</strong> Jeder verpasste Monat bedeutet Einkommensverlust, der nicht nachgeholt werden kann. Beantragen Sie rechtzeitig!</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>5. Süreler ve önemli tarihler</h2>
+      <ul>
+        <li><strong>Emeklilikten 3 ay önce:</strong> Başvuru yapın — böylece ödeme istediğiniz tarihte başlar</li>
+        <li><strong>Geriye dönük ödeme yok:</strong> Geç başvuranlar ay kaybeder — emeklilik yalnızca başvuru tarihinden itibaren ödenir</li>
+        <li><strong>1 aylık itiraz süresi:</strong> Emeklilik bildirimi alındıktan sonra hata durumunda</li>
+        <li><strong>Yıllık emeklilik artışı:</strong> Genellikle 1 Temmuz'da — mevcut emeklilik değeri düzenli olarak artar</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Süreyi kaçırmak maliyetlidir:</strong> Kaçırılan her ay, telafi edilemeyen gelir kaybı demektir. Zamanında başvuru yapın!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FEHLER -->
+  <div class="article-section" id="fehler">
+    <div data-lang="de">
+      <h2>6. Häufige Fehler beim Rentenantrag</h2>
+      <ul>
+        <li><strong>Zu spät beantragen</strong> — jeder verpasste Monat ist unwiederbringlich verloren</li>
+        <li><strong>Unvollständige Unterlagen</strong> — verzögert die Bearbeitung um Monate</li>
+        <li><strong>Ausländische Versicherungszeiten vergessen</strong> — Zeiten aus anderen EU-Ländern oder Ländern mit Sozialversicherungsabkommen (z.B. Türkei) können angerechnet werden</li>
+        <li><strong>Kindererziehungszeiten nicht geltend machen</strong> — pro Kind bis zu 3 Jahre anrechenbar</li>
+        <li><strong>Rentenbescheid nicht prüfen</strong> — Fehler kommen vor, die Widerspruchsfrist ist kurz</li>
+        <li><strong>Nebenverdienst nicht melden</strong> — führt zu Rückforderungen</li>
+      </ul>
+      <div class="highlight-box">
+        <p>💡 <strong>Tipp:</strong> Lassen Sie Ihren Antrag und den Bescheid von einem Experten prüfen. Ein Fehler kann jahrelang Mehreinnahmen bedeuten — oder Tausende Euro Verlust.</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>6. Emeklilik başvurusunda sık yapılan hatalar</h2>
+      <ul>
+        <li><strong>Geç başvuru yapmak</strong> — kaçırılan her ay geri kazanılamaz</li>
+        <li><strong>Eksik belge sunmak</strong> — işlemi aylarca geciktirir</li>
+        <li><strong>Yurt dışı sigorta sürelerini unutmak</strong> — AB ülkelerindeki veya sosyal güvenlik anlaşması olan ülkelerdeki (örn. Türkiye) süreler sayılabilir</li>
+        <li><strong>Çocuk yetiştirme sürelerini talep etmemek</strong> — her çocuk için 3 yıla kadar sayılabilir</li>
+        <li><strong>Emeklilik bildirimini kontrol etmemek</strong> — hatalar olabilir, itiraz süresi kısadır</li>
+        <li><strong>Ek kazancı bildirmemek</strong> — geri ödeme talebine yol açar</li>
+      </ul>
+      <div class="highlight-box">
+        <p>💡 <strong>İpucu:</strong> Başvurunuzu ve bildirimi bir uzman tarafından inceletin. Tek bir hata yıllarca fazla gelir veya binlerce Euro kayıp anlamına gelebilir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. MIGRANTEN -->
+  <div class="article-section" id="besonderheiten">
+    <div data-lang="de">
+      <h2>7. Besonderheiten für Migranten & Türkeistämmige</h2>
+      <p>Für Menschen mit Migrationshintergrund — besonders aus der Türkei — gelten einige wichtige Regelungen:</p>
+      <h3>Deutsch-Türkisches Sozialversicherungsabkommen</h3>
+      <p>Zwischen Deutschland und der Türkei besteht seit 1965 ein Sozialversicherungsabkommen. Das bedeutet: <strong>Versicherungszeiten in der Türkei können für die deutsche Rente angerechnet werden</strong> und umgekehrt. Sie müssen diese Zeiten aktiv geltend machen.</p>
+      <h3>Doppelter Rentenanspruch möglich</h3>
+      <p>Wer sowohl in Deutschland als auch in der Türkei gearbeitet hat, kann unter Umständen <strong>Rente aus beiden Ländern</strong> beziehen. Die Ansprüche werden unabhängig voneinander berechnet.</p>
+      <h3>Sprachbarriere & Formularprobleme</h3>
+      <p>Die Rentenantragsformulare sind komplex. Fehler durch Missverständnisse bei deutschen Fachbegriffen führen zu Verzögerungen oder Nachteilen. Eine professionelle Hilfe in Ihrer Muttersprache ist hier besonders wertvoll.</p>
+      <div class="highlight-box">
+        <p>💡 <strong>Wichtig:</strong> Türkische Versicherungszeiten müssen beim deutschen Rentenversicherungsträger aktiv nachgewiesen werden — sie werden nicht automatisch berücksichtigt.</p>
+      </div>
+    </div>
+    <div data-lang="tr">
+      <h2>7. Göçmenler ve Türkiye kökenli vatandaşlar için özel durumlar</h2>
+      <p>Göçmen geçmişi olan kişiler — özellikle Türkiye kökenli olanlar — için bazı önemli düzenlemeler geçerlidir:</p>
+      <h3>Türk-Alman Sosyal Güvenlik Anlaşması</h3>
+      <p>Türkiye ile Almanya arasında 1965'ten bu yana bir sosyal güvenlik anlaşması bulunmaktadır. Bu anlaşma kapsamında: <strong>Türkiye'deki sigorta süreleri Almanya emekliliğine sayılabilir</strong> ve tersi de geçerlidir. Bu süreleri aktif olarak talep etmeniz gerekmektedir.</p>
+      <h3>İki ülkeden emeklilik alınabilir</h3>
+      <p>Hem Almanya'da hem Türkiye'de çalışmış olanlar, koşulları sağlamaları hâlinde <strong>her iki ülkeden emeklilik</strong> alabilir. Haklar birbirinden bağımsız hesaplanır.</p>
+      <h3>Dil engeli ve form sorunları</h3>
+      <p>Emeklilik başvuru formları karmaşıktır. Almanca teknik terimler nedeniyle yapılan hatalar gecikmelere veya hak kayıplarına yol açar. Ana dilinizde profesyonel destek almak bu noktada özellikle değerlidir.</p>
+      <div class="highlight-box">
+        <p>💡 <strong>Önemli:</strong> Türkiye'deki sigorta süreleri Alman emeklilik kurumuna aktif olarak kanıtlanmalıdır — otomatik olarak dikkate alınmaz.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section" id="antrag">
+    <div data-lang="de">
+      <h2>Zu kompliziert? Wir machen das für Sie.</h2>
+      <p>Rentenanträge sind komplex — besonders mit ausländischen Versicherungszeiten, Kindererziehungszeiten und deutschen Fachbegriffen. Unser Service füllt Ihren Antrag korrekt und vollständig aus.</p>
+      <div class="price-badge">24,90 €</div>
+      <p style="font-size:0.82rem;">Einmalige Servicegebühr · Kein Abonnement · Ergebnis in 48 Stunden</p>
+    </div>
+    <div data-lang="tr">
+      <h2>Çok mu karmaşık? Biz halledelim.</h2>
+      <p>Emeklilik başvuruları karmaşıktır — özellikle yurt dışı sigorta süreleri, çocuk yetiştirme dönemleri ve Almanca teknik terimlerle uğraşmak zorunda kalındığında. Hizmetimiz, başvurunuzu doğru ve eksiksiz doldurur.</p>
+      <div class="price-badge">24,90 €</div>
+      <p style="font-size:0.82rem;">Tek seferlik hizmet bedeli · Abonelik yok · 48 saat içinde sonuç</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <form action="https://formspree.io/f/xqeobrre" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="service" value="Rentenantrag">
+        <div class="form-grid">
+          <div class="form-row">
+            <label class="form-label">
+              <span data-lang-inline="de">Vor- & Nachname</span>
+              <span data-lang-inline="tr">Ad & Soyad</span>
+            </label>
+            <input type="text" name="name" class="form-input" required placeholder="Max Mustermann">
+          </div>
+          <div class="form-row">
+            <label class="form-label">E-Mail</label>
+            <input type="email" name="email" class="form-input" required placeholder="ihre@email.de">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            <span data-lang-inline="de">Kurze Beschreibung Ihrer Situation</span>
+            <span data-lang-inline="tr">Durumunuzun kısa açıklaması</span>
+          </label>
+          <textarea name="beschreibung" class="form-textarea" placeholder="z.B. Ich bin 64 Jahre alt, habe 38 Versicherungsjahre und auch in der Türkei gearbeitet..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span data-lang-inline="de">Jetzt Rentenantrag beauftragen →</span>
+          <span data-lang-inline="tr">Emeklilik başvurusunu şimdi yaptır →</span>
+        </button>
+        <p class="form-note">
+          <span data-lang-inline="de">Keine persönlichen Dokumente bitte — nur eine kurze Schilderung. Wir melden uns innerhalb von 24 Stunden.</span>
+          <span data-lang-inline="tr">Lütfen kişisel belge göndermeyin — kısa bir açıklama yeterli. 24 saat içinde size dönüyoruz.</span>
+        </p>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">wasstehtmirzu.com</div>
+  <p>© 2026 AskMeAI Teknoloji Ltd. Şti.</p>
+  <div style="margin-top:0.8rem;">
+    <a href="/">
+      <span data-lang-inline="de">Startseite</span>
+      <span data-lang-inline="tr">Ana Sayfa</span>
+    </a>
+    <a href="#" onclick="openModal('impressum')">Impressum</a>
+    <a href="#" onclick="openModal('datenschutz')">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang, btn) {
+    document.getElementById('body-root').className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.documentElement.lang = lang;
+  }
+  (function() {
+    const l = navigator.language || 'de';
+    if (l.startsWith('tr')) {
+      document.getElementById('body-root').className = 'lang-tr';
+      const btns = document.querySelectorAll('.lang-btn');
+      if (btns[0]) btns[0].classList.remove('active');
+      if (btns[1]) btns[1].classList.add('active');
+    }
+  })();
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.submit-btn');
+    const isDE = document.getElementById('body-root').className === 'lang-de';
+    btn.textContent = isDE ? 'Wird gesendet...' : 'Gönderiliyor...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        btn.textContent = isDE ? '✓ Anfrage eingegangen!' : '✓ Talebiniz alındı!';
+        btn.style.background = '#1a5c2e';
+        btn.style.color = '#fff';
+        form.reset();
+      } else {
+        btn.textContent = isDE ? '⚠ Fehler – bitte E-Mail senden' : '⚠ Hata – lütfen e-posta gönderin';
+        btn.style.background = '#8B0000';
+        btn.style.color = '#fff';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = isDE ? '⚠ Verbindungsfehler' : '⚠ Bağlantı hatası';
+      btn.disabled = false;
+    }
+  }
+  function openModal(type) { /* Impressum/Datenschutz — ana sayfaya yönlendir */ window.location.href = '/#' + type; }
+</script>
+</body>
+</html>
