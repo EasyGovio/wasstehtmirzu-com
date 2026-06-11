@@ -328,6 +328,7 @@
     font-weight: 300;
   }
 
+  /* Dinamik Blog Bölümü stilleri */
   .blog-section {
     background: var(--white);
     border-radius: 16px;
@@ -365,6 +366,7 @@
     border-radius: 12px;
     padding: 1.2rem;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
   }
 
   .blog-card:hover {
@@ -747,45 +749,8 @@
     </div>
   </div>
 
-  <!-- BLOG BÖLÜMÜ -->
-  <div class="blog-section">
-    <div class="blog-title" data-lang-inline="de">📘 Wissen & Ratgeber</div>
-    <div class="blog-title" data-lang-inline="tr">📘 Bilgi & Rehber</div>
-    <div class="blog-sub" data-lang-inline="de">Kompakt erklärt – für Ihre Anträge</div>
-    <div class="blog-sub" data-lang-inline="tr">Kompakt açıklamalı – başvurularınız için</div>
-
-    <div class="blog-grid">
-      <div class="blog-card"><h4>Rentenbescheid prüfen – So erkennen Sie Fehler</h4><p>Was tun, wenn die Rente zu niedrig ist? Eine Checkliste für Betroffene.</p><a href="/blog/rentenbescheid-pruefen.html" class="blog-link">Mehr erfahren →</a></div>
-      <div class="blog-card"><h4>Grundrente beantragen – Ein Leitfaden</h4><p>Wer Anspruch hat, welche Unterlagen nötig sind.</p><a href="/blog/grundrente-beantragen.html" class="blog-link">Mehr erfahren →</a></div>
-      <div class="blog-card"><h4>Pflegegrad Widerspruch – So erhöhen Sie Ihre Chancen</h4><p>Bei zu niedrigem Pflegegrad: Muster und Tipps.</p><a href="/blog/pflegegrad-widerspruch.html" class="blog-link">Mehr erfahren →</a></div>
-      <div class="blog-card"><h4>Kindergeld für ausländische Kinder</h4><p>Rechte türkischstämmiger Familien in Deutschland.</p><a href="/blog/kindergeld-auslaendische-kinder.html" class="blog-link">Mehr erfahren →</a></div>
-      <div class="blog-card"><h4>Widerspruchsfristen – Was Sie unbedingt beachten müssen</h4><p>Ein Monat – und was danach passiert.</p><a href="/blog/widerspruch-fristen.html" class="blog-link">Mehr erfahren →</a></div>
-      <div class="blog-card"><h4>Erwerbsminderungsrente – Voraussetzungen & Antrag</h4><p>Wann Sie früher in Rente gehen können.</p><a href="/blog/erwerbsminderungsrente.html" class="blog-link">Mehr erfahren →</a></div>
-    </div>
-
-    <!-- MAKALELER İÇİN UYARI -->
-    <div class="disclaimer-makale">
-      <span data-lang-inline="de"><strong>📌 Rechtlicher Hinweis:</strong> Die Artikel auf dieser Seite ersetzen keine rechtliche oder medizinische Beratung. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt, das zuständige Amtsgericht oder Ihre Krankenkasse.</span>
-      <span data-lang-inline="tr"><strong>📌 Hukuki Uyarı:</strong> Bu sayfadaki makaleler hukuki veya tıbbi tavsiye yerine geçmez. Kesin bilgi için bir avukata, yetkili Sulh Mahkemesi'ne veya sağlık sigortanıza danışın.</span>
-    </div>
-
-    <div class="all-articles">
-      <h3 data-lang-inline="de">📖 Alle Ratgeber im Überblick</h3>
-      <h3 data-lang-inline="tr">📖 Tüm Rehberlere Genel Bakış</h3>
-      <div class="article-list">
-        <a href="/blog/rentenbescheid-pruefen.html">Rentenbescheid prüfen →</a>
-        <a href="/blog/grundrente-beantragen.html">Grundrente beantragen →</a>
-        <a href="/blog/pflegegrad-widerspruch.html">Pflegegrad Widerspruch →</a>
-        <a href="/blog/kindergeld-auslaendische-kinder.html">Kindergeld für ausländische Kinder →</a>
-        <a href="/blog/widerspruch-fristen.html">Widerspruchsfristen →</a>
-        <a href="/blog/erwerbsminderungsrente.html">Erwerbsminderungsrente →</a>
-        <a href="/blog/rentenantrag.html">Rentenantrag (Hauptseite) →</a>
-        <a href="/blog/pflegegrad.html">Pflegegrad Antrag →</a>
-        <a href="/blog/kindergeld.html">Kindergeld Antrag →</a>
-        <a href="/blog/widerspruch.html">Widerspruch einlegen →</a>
-      </div>
-    </div>
-  </div>
+  <!-- DİNAMİK BLOG BÖLÜMÜ -->
+  <div id="blog-dynamic-container"></div>
 
   <div class="trust">
     <div class="trust-item"><span class="trust-icon">🔒</span><span data-lang-inline="de">DSGVO-konform</span><span data-lang-inline="tr">DSGVO uyumlu</span></div>
@@ -859,6 +824,143 @@
 </div>
 
 <script>
+  // Dil verileri
+  var i18n = {
+    tr: {
+      blog_title: "📘 Bilgi & Rehber",
+      blog_sub: "Uzman içerikler, bilimsel kaynaklar ve pratik rehberler — tümü ücretsiz.",
+      blog_all: "📖 Tüm Rehberlere Genel Bakış",
+      blog_read: "Oku →"
+    },
+    de: {
+      blog_title: "📘 Wissen & Ratgeber",
+      blog_sub: "Kompakt erklärt – für Ihre tägliche Arbeit",
+      blog_all: "📖 Alle Ratgeber im Überblick",
+      blog_read: "Lesen →"
+    },
+    en: {
+      blog_title: "📘 Knowledge & Guides",
+      blog_sub: "Expert content, scientific sources and practical guides — all free.",
+      blog_all: "📖 All guides at a glance",
+      blog_read: "Read →"
+    }
+  };
+
+  // Makale verileri (başlık, açıklama, link)
+  var blogArticles = {
+    tr: {
+      featured: [
+        { title: "Rentenbescheid prüfen – Fehler erkennen", desc: "Was tun, wenn die Rente zu niedrig ist? Eine Checkliste für Betroffene.", url: "/blog/rentenbescheid-pruefen.html" },
+        { title: "Grundrente beantragen – Ein Leitfaden", desc: "Wer Anspruch hat, welche Unterlagen nötig sind.", url: "/blog/grundrente-beantragen.html" },
+        { title: "Pflegegrad Widerspruch – So erhöhen Sie Ihre Chancen", desc: "Bei zu niedrigem Pflegegrad: Muster und Tipps.", url: "/blog/pflegegrad-widerspruch.html" },
+        { title: "Kindergeld für ausländische Kinder", desc: "Rechte türkischstämmiger Familien in Deutschland.", url: "/blog/kindergeld-auslaendische-kinder.html" },
+        { title: "Widerspruchsfristen – Was Sie unbedingt beachten müssen", desc: "Ein Monat – und was danach passiert.", url: "/blog/widerspruch-fristen.html" },
+        { title: "Erwerbsminderungsrente – Voraussetzungen & Antrag", desc: "Wann Sie früher in Rente gehen können.", url: "/blog/erwerbsminderungsrente.html" }
+      ],
+      all: [
+        ["Rentenbescheid prüfen","/blog/rentenbescheid-pruefen.html"],
+        ["Grundrente beantragen","/blog/grundrente-beantragen.html"],
+        ["Pflegegrad Widerspruch","/blog/pflegegrad-widerspruch.html"],
+        ["Kindergeld für ausländische Kinder","/blog/kindergeld-auslaendische-kinder.html"],
+        ["Widerspruchsfristen","/blog/widerspruch-fristen.html"],
+        ["Erwerbsminderungsrente","/blog/erwerbsminderungsrente.html"],
+        ["Rentenantrag (Hauptseite)","/blog/rentenantrag.html"],
+        ["Pflegegrad Antrag","/blog/pflegegrad.html"],
+        ["Kindergeld Antrag","/blog/kindergeld.html"],
+        ["Widerspruch einlegen","/blog/widerspruch.html"]
+      ]
+    },
+    de: {
+      featured: [
+        { title: "Rentenbescheid prüfen – Fehler erkennen", desc: "Was tun, wenn die Rente zu niedrig ist? Eine Checkliste für Betroffene.", url: "/blog/rentenbescheid-pruefen.html" },
+        { title: "Grundrente beantragen – Ein Leitfaden", desc: "Wer Anspruch hat, welche Unterlagen nötig sind.", url: "/blog/grundrente-beantragen.html" },
+        { title: "Pflegegrad Widerspruch – So erhöhen Sie Ihre Chancen", desc: "Bei zu niedrigem Pflegegrad: Muster und Tipps.", url: "/blog/pflegegrad-widerspruch.html" },
+        { title: "Kindergeld für ausländische Kinder", desc: "Rechte türkischstämmiger Familien in Deutschland.", url: "/blog/kindergeld-auslaendische-kinder.html" },
+        { title: "Widerspruchsfristen – Was Sie unbedingt beachten müssen", desc: "Ein Monat – und was danach passiert.", url: "/blog/widerspruch-fristen.html" },
+        { title: "Erwerbsminderungsrente – Voraussetzungen & Antrag", desc: "Wann Sie früher in Rente gehen können.", url: "/blog/erwerbsminderungsrente.html" }
+      ],
+      all: [
+        ["Rentenbescheid prüfen","/blog/rentenbescheid-pruefen.html"],
+        ["Grundrente beantragen","/blog/grundrente-beantragen.html"],
+        ["Pflegegrad Widerspruch","/blog/pflegegrad-widerspruch.html"],
+        ["Kindergeld für ausländische Kinder","/blog/kindergeld-auslaendische-kinder.html"],
+        ["Widerspruchsfristen","/blog/widerspruch-fristen.html"],
+        ["Erwerbsminderungsrente","/blog/erwerbsminderungsrente.html"],
+        ["Rentenantrag (Hauptseite)","/blog/rentenantrag.html"],
+        ["Pflegegrad Antrag","/blog/pflegegrad.html"],
+        ["Kindergeld Antrag","/blog/kindergeld.html"],
+        ["Widerspruch einlegen","/blog/widerspruch.html"]
+      ]
+    },
+    en: {
+      featured: [
+        { title: "Checking your pension notice – Identify errors", desc: "What to do if the pension is too low? A checklist for those affected.", url: "/blog/rentenbescheid-pruefen.html" },
+        { title: "Applying for basic pension – A guide", desc: "Who is entitled, what documents are needed.", url: "/blog/grundrente-beantragen.html" },
+        { title: "Appealing care grade – How to increase your chances", desc: "If care grade is too low: templates and tips.", url: "/blog/pflegegrad-widerspruch.html" },
+        { title: "Child benefit for foreign children", desc: "Rights of Turkish‑origin families in Germany.", url: "/blog/kindergeld-auslaendische-kinder.html" },
+        { title: "Objection deadlines – What you must know", desc: "One month – and what happens after.", url: "/blog/widerspruch-fristen.html" },
+        { title: "Disability pension – Requirements & application", desc: "When you can retire earlier.", url: "/blog/erwerbsminderungsrente.html" }
+      ],
+      all: [
+        ["Checking pension notice","/blog/rentenbescheid-pruefen.html"],
+        ["Applying for basic pension","/blog/grundrente-beantragen.html"],
+        ["Appealing care grade","/blog/pflegegrad-widerspruch.html"],
+        ["Child benefit for foreign children","/blog/kindergeld-auslaendische-kinder.html"],
+        ["Objection deadlines","/blog/widerspruch-fristen.html"],
+        ["Disability pension","/blog/erwerbsminderungsrente.html"],
+        ["Pension application (main page)","/blog/rentenantrag.html"],
+        ["Care grade application","/blog/pflegegrad.html"],
+        ["Child benefit application","/blog/kindergeld.html"],
+        ["Filing an objection","/blog/widerspruch.html"]
+      ]
+    }
+  };
+
+  function renderBlog(lang) {
+    var data = blogArticles[lang] || blogArticles["de"];
+    var texts = i18n[lang] || i18n["de"];
+    var container = document.getElementById("blog-dynamic-container");
+    if (!container) return;
+
+    var featuredHtml = data.featured.map(function(article) {
+      return '<div class="blog-card" onclick="location.href=\''+article.url+'\'">' +
+        '<h4>' + article.title + '</h4>' +
+        '<p>' + article.desc + '</p>' +
+        '<a href="'+article.url+'" class="blog-link" onclick="event.stopPropagation()">' + texts.blog_read + '</a>' +
+        '</div>';
+    }).join("");
+
+    var allHtml = data.all.map(function(item) {
+      return '<a href="'+item[1]+'">'+item[0]+' →</a>';
+    }).join("");
+
+    var disclaimer = '<div class="disclaimer-makale">' +
+      '<span data-lang-inline="de"><strong>📌 Rechtlicher Hinweis:</strong> Die Artikel auf dieser Seite ersetzen keine rechtliche oder medizinische Beratung. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt, das zuständige Amtsgericht oder Ihre Krankenkasse.</span>' +
+      '<span data-lang-inline="tr"><strong>📌 Hukuki Uyarı:</strong> Bu sayfadaki makaleler hukuki veya tıbbi tavsiye yerine geçmez. Kesin bilgi için bir avukata, yetkili Sulh Mahkemesi\'ne veya sağlık sigortanıza danışın.</span>' +
+      '</div>';
+
+    var fullHtml = '<div class="blog-section">' +
+      '<div class="blog-title">' + texts.blog_title + '</div>' +
+      '<div class="blog-sub">' + texts.blog_sub + '</div>' +
+      '<div class="blog-grid">' + featuredHtml + '</div>' +
+      '<div class="all-articles">' +
+      '<h3>' + texts.blog_all + '</h3>' +
+      '<div class="article-list">' + allHtml + '</div>' +
+      '</div>' +
+      disclaimer +
+      '</div>';
+
+    container.innerHTML = fullHtml;
+  }
+
+  function setLang(lang) {
+    document.getElementById('body-root').className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    if (lang === 'de') document.querySelectorAll('.lang-btn')[0].classList.add('active');
+    else document.querySelectorAll('.lang-btn')[1].classList.add('active');
+    renderBlog(lang);
+  }
+
   function openModal(type) {
     document.getElementById('modal-impressum').style.display = type === 'impressum' ? 'block' : 'none';
     document.getElementById('modal-datenschutz').style.display = type === 'datenschutz' ? 'block' : 'none';
@@ -871,22 +973,6 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
-
-  function setLang(lang) {
-    document.getElementById('body-root').className = 'lang-' + lang;
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-  }
-
-  (function() {
-    const browserLang = navigator.language || navigator.userLanguage || 'de';
-    if (browserLang.startsWith('tr')) {
-      document.getElementById('body-root').className = 'lang-tr';
-      const btns = document.querySelectorAll('.lang-btn');
-      btns[0].classList.remove('active');
-      btns[1].classList.add('active');
-    }
-  })();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -916,6 +1002,13 @@
       btn.disabled = false;
     }
   }
+
+  // Başlangıç dili
+  (function() {
+    const browserLang = navigator.language || navigator.userLanguage || 'de';
+    const startLang = browserLang.startsWith('tr') ? 'tr' : 'de';
+    setLang(startLang);
+  })();
 </script>
 </body>
 </html>
