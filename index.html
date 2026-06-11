@@ -31,7 +31,6 @@
     overflow-x: hidden;
   }
 
-  /* LANGUAGE TOGGLE */
   .lang-bar {
     background: var(--navy);
     padding: 0.5rem 2rem;
@@ -59,7 +58,6 @@
     border-color: var(--gold);
   }
 
-  /* HEADER */
   .header {
     background: var(--navy);
     padding: 2.5rem 2rem 3rem;
@@ -98,9 +96,7 @@
     margin-bottom: 1rem;
   }
 
-  .header h1 span {
-    color: var(--gold);
-  }
+  .header h1 span { color: var(--gold); }
 
   .header-sub {
     font-size: 1rem;
@@ -128,14 +124,12 @@
     letter-spacing: 0.05em;
   }
 
-  /* MAIN */
   .main {
     max-width: 860px;
     margin: 0 auto;
     padding: 3rem 1.5rem 5rem;
   }
 
-  /* INTRO */
   .intro {
     text-align: center;
     margin-bottom: 3rem;
@@ -159,7 +153,6 @@
     font-weight: 300;
   }
 
-  /* SERVICE CARDS */
   .services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -203,9 +196,7 @@
     transform: translateY(-3px);
   }
 
-  .service-card:hover::after {
-    transform: scaleX(1);
-  }
+  .service-card:hover::after { transform: scaleX(1); }
 
   .service-icon {
     font-size: 1.8rem;
@@ -274,7 +265,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* HOW IT WORKS */
   .how {
     background: var(--navy);
     border-radius: 16px;
@@ -338,7 +328,119 @@
     font-weight: 300;
   }
 
-  /* ORDER FORM */
+  .blog-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .blog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .blog-sub {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-card {
+    background: var(--cream);
+    border: 1px solid rgba(4,22,46,0.08);
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  .blog-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+
+  .blog-card p {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .blog-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .blog-link:hover { text-decoration: underline; }
+
+  .all-articles {
+    border-top: 1px solid rgba(4,22,46,0.08);
+    padding-top: 1.5rem;
+  }
+
+  .all-articles h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .article-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  @media (max-width: 540px) {
+    .article-list { grid-template-columns: 1fr; }
+  }
+
+  .article-list a {
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    display: block;
+    padding: 0.2rem 0;
+    border-bottom: 1px dotted rgba(4,22,46,0.08);
+  }
+
+  .article-list a:hover { color: var(--gold); }
+
+  .disclaimer-makale {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background: #fff8e6;
+    border-left: 4px solid #e6a817;
+    font-size: 0.72rem;
+    color: #7a5500;
+    line-height: 1.5;
+    border-radius: 0 8px 8px 0;
+  }
+
   .order-section {
     background: var(--white);
     border-radius: 16px;
@@ -387,7 +489,6 @@
     background: var(--cream);
     transition: border-color 0.2s;
     outline: none;
-    -webkit-appearance: none;
   }
 
   .form-input:focus, .form-select:focus, .form-textarea:focus {
@@ -447,20 +548,9 @@
     background: var(--gold-light);
   }
 
-  .contact-btn-icon {
-    font-size: 1.4rem;
-  }
-
-  .contact-btn-text {
-    font-size: 0.82rem;
-    font-weight: 500;
-  }
-
-  .contact-btn-sub {
-    font-size: 0.7rem;
-    color: var(--text-light);
-    font-weight: 300;
-  }
+  .contact-btn-icon { font-size: 1.4rem; }
+  .contact-btn-text { font-size: 0.82rem; font-weight: 500; }
+  .contact-btn-sub { font-size: 0.7rem; color: var(--text-light); font-weight: 300; }
 
   .divider {
     text-align: center;
@@ -513,7 +603,6 @@
     font-weight: 300;
   }
 
-  /* TRUST */
   .trust {
     display: flex;
     gap: 1.5rem;
@@ -537,7 +626,6 @@
     font-size: 1rem;
   }
 
-  /* FOOTER */
   .footer {
     background: var(--navy);
     padding: 1.5rem 2rem;
@@ -557,7 +645,16 @@
     font-weight: 300;
   }
 
-  /* ANIMATIONS */
+  .footer-disclaimer {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.25);
+    margin-top: 0.8rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -568,7 +665,6 @@
   .s3 { animation-delay: 0.15s; }
   .s4 { animation-delay: 0.2s; }
 
-  /* HIDDEN - sadece aktif dil görünür */
   [data-lang] { display: none !important; }
   [data-lang-inline] { display: none !important; }
   .lang-de [data-lang="de"] { display: block !important; }
@@ -583,12 +679,7 @@
   "name": "wasstehtmirzu.com",
   "url": "https://wasstehtmirzu.com",
   "description": "Sozialleistungsanträge professionell ausfüllen lassen — auf Deutsch und Türkisch.",
-  "inLanguage": ["de", "tr"],
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://wasstehtmirzu.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "inLanguage": ["de", "tr"]
 }
 </script>
 <script type="application/ld+json">
@@ -604,7 +695,6 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8426936740213369" crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6ML8EDW0H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -615,417 +705,160 @@
 </head>
 <body class="lang-de" id="body-root">
 
-<!-- LANG BAR -->
 <div class="lang-bar">
   <button class="lang-btn active" onclick="setLang('de')">DE</button>
   <button class="lang-btn" onclick="setLang('tr')">TR</button>
 </div>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-brand">wasstehtmirzu.com · AskMeAI Technologie</div>
-  <h1>
-    <span data-lang-inline="de">Ihr Antrag.</span>
-    <span data-lang-inline="tr">Başvurunuz.</span>
-    <br>
-    <span data-lang-inline="de">Professionell ausgefüllt.</span>
-    <span data-lang-inline="tr">Profesyonelce dolduruldu.</span>
-  </h1>
-  <p class="header-sub">
-    <span data-lang-inline="de">Wir füllen Ihre Sozialleistungsanträge auf Deutsch aus — korrekt, vollständig und innerhalb von 48 Stunden.</span>
-    <span data-lang-inline="tr">Sosyal yardım başvurularınızı Almanca olarak dolduruyoruz — doğru, eksiksiz ve 48 saat içinde.</span>
-  </p>
+  <h1><span data-lang-inline="de">Ihr Antrag.</span><span data-lang-inline="tr">Başvurunuz.</span><br><span data-lang-inline="de">Professionell ausgefüllt.</span><span data-lang-inline="tr">Profesyonelce dolduruldu.</span></h1>
+  <p class="header-sub"><span data-lang-inline="de">Wir füllen Ihre Sozialleistungsanträge auf Deutsch aus — korrekt, vollständig und innerhalb von 48 Stunden.</span><span data-lang-inline="tr">Sosyal yardım başvurularınızı Almanca olarak dolduruyoruz — doğru, eksiksiz ve 48 saat içinde.</span></p>
   <div class="header-badges">
-    <span class="badge">
-      <span data-lang-inline="de">✓ 48h Lieferung</span>
-      <span data-lang-inline="tr">✓ 48 saat teslimat</span>
-    </span>
-    <span class="badge">
-      <span data-lang-inline="de">✓ Zweisprachig</span>
-      <span data-lang-inline="tr">✓ İki dilli hizmet</span>
-    </span>
-    <span class="badge">
-      <span data-lang-inline="de">✓ Geprüfte Expertise</span>
-      <span data-lang-inline="tr">✓ Uzman desteği</span>
-    </span>
+    <span class="badge"><span data-lang-inline="de">✓ 48h Lieferung</span><span data-lang-inline="tr">✓ 48 saat teslimat</span></span>
+    <span class="badge"><span data-lang-inline="de">✓ Zweisprachig</span><span data-lang-inline="tr">✓ İki dilli hizmet</span></span>
+    <span class="badge"><span data-lang-inline="de">✓ Geprüfte Expertise</span><span data-lang-inline="tr">✓ Uzman desteği</span></span>
   </div>
 </div>
 
-<!-- MAIN -->
 <main class="main">
 
-  <!-- INTRO -->
   <div class="intro">
-    <h2 class="intro-title">
-      <span data-lang-inline="de">Vier Leistungen. Ein Service.</span>
-      <span data-lang-inline="tr">Dört hizmet. Tek platform.</span>
-    </h2>
-    <p class="intro-text">
-      <span data-lang-inline="de">Deutsche Behördenformulare sind komplex. Wir kennen die Formulare, die Fachbegriffe und die häufigsten Fehler — und füllen Ihren Antrag korrekt aus.</span>
-      <span data-lang-inline="tr">Alman resmi formları karmaşıktır. Formları, teknik terimleri ve sık yapılan hataları biliyoruz — başvurunuzu doğru şekilde dolduruyoruz.</span>
-    </p>
+    <h2 class="intro-title"><span data-lang-inline="de">Vier Leistungen. Ein Service.</span><span data-lang-inline="tr">Dört hizmet. Tek platform.</span></h2>
+    <p class="intro-text"><span data-lang-inline="de">Deutsche Behördenformulare sind komplex. Wir kennen die Formulare, die Fachbegriffe und die häufigsten Fehler — und füllen Ihren Antrag korrekt aus.</span><span data-lang-inline="tr">Alman resmi formları karmaşıktır. Formları, teknik terimleri ve sık yapılan hataları biliyoruz — başvurunuzu doğru şekilde dolduruyoruz.</span></p>
   </div>
 
-  <!-- SERVICE CARDS -->
   <div class="services">
+    <div class="service-card s1"><span class="service-tag"><span data-lang-inline="de">Beliebt</span><span data-lang-inline="tr">Popüler</span></span><div class="service-icon">🏦</div><div class="service-name"><span data-lang-inline="de">Rentenantrag</span><span data-lang-inline="tr">Emeklilik Başvurusu</span></div><p class="service-desc"><span data-lang-inline="de">Grundrente, Altersrente, Erwerbsminderungsrente — wir füllen Ihren Rentenantrag vollständig und korrekt aus.</span><span data-lang-inline="tr">Grundrente, yaşlılık aylığı, iş göremezlik aylığı — emeklilik başvurunuzu eksiksiz dolduruyoruz.</span></p><div class="service-price"><span class="price-amount">24,90 €</span><span class="price-unit"><span data-lang-inline="de">pro Antrag</span><span data-lang-inline="tr">başvuru başına</span></span></div><a href="/blog/rentenantrag.html" class="card-link"><span data-lang-inline="de">Mehr erfahren →</span><span data-lang-inline="tr">Daha fazla bilgi →</span></a></div>
 
-    <div class="service-card s1">
-      <span class="service-tag">
-        <span data-lang-inline="de">Beliebt</span>
-        <span data-lang-inline="tr">Popüler</span>
-      </span>
-      <div class="service-icon">🏦</div>
-      <div class="service-name">
-        <span data-lang-inline="de">Rentenantrag</span>
-        <span data-lang-inline="tr">Emeklilik Başvurusu</span>
-      </div>
-      <p class="service-desc">
-        <span data-lang-inline="de">Grundrente, Altersrente, Erwerbsminderungsrente — wir füllen Ihren Rentenantrag vollständig und korrekt aus.</span>
-        <span data-lang-inline="tr">Grundrente, yaşlılık aylığı, iş göremezlik aylığı — emeklilik başvurunuzu eksiksiz dolduruyoruz.</span>
-      </p>
-      <div class="service-price">
-        <span class="price-amount">24,90 €</span>
-        <span class="price-unit">
-          <span data-lang-inline="de">pro Antrag</span>
-          <span data-lang-inline="tr">başvuru başına</span>
-        </span>
-      </div>
-      <a href="/rentenantrag" class="card-link">
-        <span data-lang-inline="de">Mehr erfahren →</span>
-        <span data-lang-inline="tr">Daha fazla bilgi →</span>
-      </a>
-    </div>
+    <div class="service-card s2"><div class="service-icon">🏥</div><div class="service-name"><span data-lang-inline="de">Pflegegrad Antrag</span><span data-lang-inline="tr">Bakım Derecesi Başvurusu</span></div><p class="service-desc"><span data-lang-inline="de">Erstantrag oder Höherstufung — wir bereiten Ihren Pflegegrad-Antrag fachkundig vor.</span><span data-lang-inline="tr">İlk başvuru veya derece yükseltme — Pflegegrad başvurunuzu uzman bilgisiyle hazırlıyoruz.</span></p><div class="service-price"><span class="price-amount">24,90 €</span><span class="price-unit"><span data-lang-inline="de">pro Antrag</span><span data-lang-inline="tr">başvuru başına</span></span></div><a href="/blog/pflegegrad.html" class="card-link"><span data-lang-inline="de">Mehr erfahren →</span><span data-lang-inline="tr">Daha fazla bilgi →</span></a></div>
 
-    <div class="service-card s2">
-      <div class="service-icon">🏥</div>
-      <div class="service-name">
-        <span data-lang-inline="de">Pflegegrad Antrag</span>
-        <span data-lang-inline="tr">Bakım Derecesi Başvurusu</span>
-      </div>
-      <p class="service-desc">
-        <span data-lang-inline="de">Erstantrag oder Höherstufung — wir bereiten Ihren Pflegegrad-Antrag fachkundig vor.</span>
-        <span data-lang-inline="tr">İlk başvuru veya derece yükseltme — Pflegegrad başvurunuzu uzman bilgisiyle hazırlıyoruz.</span>
-      </p>
-      <div class="service-price">
-        <span class="price-amount">24,90 €</span>
-        <span class="price-unit">
-          <span data-lang-inline="de">pro Antrag</span>
-          <span data-lang-inline="tr">başvuru başına</span>
-        </span>
-      </div>
-      <a href="/pflegegrad" class="card-link">
-        <span data-lang-inline="de">Mehr erfahren →</span>
-        <span data-lang-inline="tr">Daha fazla bilgi →</span>
-      </a>
-    </div>
+    <div class="service-card s3"><div class="service-icon">👶</div><div class="service-name"><span data-lang-inline="de">Kindergeld / Kinderzuschlag</span><span data-lang-inline="tr">Çocuk Parası Başvurusu</span></div><p class="service-desc"><span data-lang-inline="de">Kindergeld und Kinderzuschlag — wir füllen Ihren Antrag bei der Familienkasse aus.</span><span data-lang-inline="tr">Kindergeld ve Kinderzuschlag başvurularınızı Familienkasse için hazırlıyoruz.</span></p><div class="service-price"><span class="price-amount">14,90 €</span><span class="price-unit"><span data-lang-inline="de">pro Antrag</span><span data-lang-inline="tr">başvuru başına</span></span></div><a href="/blog/kindergeld.html" class="card-link"><span data-lang-inline="de">Mehr erfahren →</span><span data-lang-inline="tr">Daha fazla bilgi →</span></a></div>
 
-    <div class="service-card s3">
-      <div class="service-icon">👶</div>
-      <div class="service-name">
-        <span data-lang-inline="de">Kindergeld / Kinderzuschlag</span>
-        <span data-lang-inline="tr">Çocuk Parası Başvurusu</span>
-      </div>
-      <p class="service-desc">
-        <span data-lang-inline="de">Kindergeld und Kinderzuschlag — wir füllen Ihren Antrag bei der Familienkasse aus.</span>
-        <span data-lang-inline="tr">Kindergeld ve Kinderzuschlag başvurularınızı Familienkasse için hazırlıyoruz.</span>
-      </p>
-      <div class="service-price">
-        <span class="price-amount">14,90 €</span>
-        <span class="price-unit">
-          <span data-lang-inline="de">pro Antrag</span>
-          <span data-lang-inline="tr">başvuru başına</span>
-        </span>
-      </div>
-      <a href="/kindergeld" class="card-link">
-        <span data-lang-inline="de">Mehr erfahren →</span>
-        <span data-lang-inline="tr">Daha fazla bilgi →</span>
-      </a>
-    </div>
-
-    <div class="service-card s4">
-      <span class="service-tag">
-        <span data-lang-inline="de">Expertenservice</span>
-        <span data-lang-inline="tr">Uzman hizmet</span>
-      </span>
-      <div class="service-icon">⚖️</div>
-      <div class="service-name">
-        <span data-lang-inline="de">Widerspruch einlegen</span>
-        <span data-lang-inline="tr">İtiraz Dilekçesi</span>
-      </div>
-      <p class="service-desc">
-        <span data-lang-inline="de">Bescheid abgelehnt? Wir formulieren Ihren Widerspruch fachlich korrekt und fristgerecht.</span>
-        <span data-lang-inline="tr">Başvurunuz reddedildi mi? İtiraz dilekçenizi zamanında ve doğru şekilde hazırlıyoruz.</span>
-      </p>
-      <div class="service-price">
-        <span class="price-amount">44,90 €</span>
-        <span class="price-unit">
-          <span data-lang-inline="de">pro Widerspruch</span>
-          <span data-lang-inline="tr">itiraz başına</span>
-        </span>
-      </div>
-      <a href="/widerspruch" class="card-link">
-        <span data-lang-inline="de">Mehr erfahren →</span>
-        <span data-lang-inline="tr">Daha fazla bilgi →</span>
-      </a>
-    </div>
-
+    <div class="service-card s4"><span class="service-tag"><span data-lang-inline="de">Expertenservice</span><span data-lang-inline="tr">Uzman hizmet</span></span><div class="service-icon">⚖️</div><div class="service-name"><span data-lang-inline="de">Widerspruch einlegen</span><span data-lang-inline="tr">İtiraz Dilekçesi</span></div><p class="service-desc"><span data-lang-inline="de">Bescheid abgelehnt? Wir formulieren Ihren Widerspruch fachlich korrekt und fristgerecht.</span><span data-lang-inline="tr">Başvurunuz reddedildi mi? İtiraz dilekçenizi zamanında ve doğru şekilde hazırlıyoruz.</span></p><div class="service-price"><span class="price-amount">44,90 €</span><span class="price-unit"><span data-lang-inline="de">pro Widerspruch</span><span data-lang-inline="tr">itiraz başına</span></span></div><a href="/blog/widerspruch.html" class="card-link"><span data-lang-inline="de">Mehr erfahren →</span><span data-lang-inline="tr">Daha fazla bilgi →</span></a></div>
   </div>
 
-  <!-- HOW IT WORKS -->
   <div class="how">
-    <h2 class="how-title">
-      <span data-lang-inline="de">So einfach <span>funktioniert es</span></span>
-      <span data-lang-inline="tr">Bu kadar <span>basit</span></span>
-    </h2>
+    <h2 class="how-title"><span data-lang-inline="de">So einfach <span>funktioniert es</span></span><span data-lang-inline="tr">Bu kadar <span>basit</span></span></h2>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-title">
-          <span data-lang-inline="de">Anfrage stellen</span>
-          <span data-lang-inline="tr">Talepte bulun</span>
-        </div>
-        <p class="step-text">
-          <span data-lang-inline="de">Per E-Mail oder WhatsApp — schildern Sie uns Ihre Situation.</span>
-          <span data-lang-inline="tr">E-posta veya WhatsApp ile durumunuzu anlatın.</span>
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-title">
-          <span data-lang-inline="de">Daten übermitteln</span>
-          <span data-lang-inline="tr">Bilgileri gönderin</span>
-        </div>
-        <p class="step-text">
-          <span data-lang-inline="de">Wir senden Ihnen eine kurze Checkliste — nur das Nötigste.</span>
-          <span data-lang-inline="tr">Size kısa bir kontrol listesi gönderiyoruz — sadece gerekli bilgiler.</span>
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-title">
-          <span data-lang-inline="de">Antrag erhalten</span>
-          <span data-lang-inline="tr">Başvuruyu alın</span>
-        </div>
-        <p class="step-text">
-          <span data-lang-inline="de">Innerhalb von 48 Stunden erhalten Sie Ihren fertig ausgefüllten Antrag als PDF.</span>
-          <span data-lang-inline="tr">48 saat içinde doldurulmuş başvurunuzu PDF olarak alırsınız.</span>
-        </p>
+      <div class="step"><div class="step-num">1</div><div class="step-title"><span data-lang-inline="de">Anfrage stellen</span><span data-lang-inline="tr">Talepte bulun</span></div><p class="step-text"><span data-lang-inline="de">Per E-Mail oder WhatsApp — schildern Sie uns Ihre Situation.</span><span data-lang-inline="tr">E-posta veya WhatsApp ile durumunuzu anlatın.</span></p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title"><span data-lang-inline="de">Daten übermitteln</span><span data-lang-inline="tr">Bilgileri gönderin</span></div><p class="step-text"><span data-lang-inline="de">Wir senden Ihnen eine kurze Checkliste — nur das Nötigste.</span><span data-lang-inline="tr">Size kısa bir kontrol listesi gönderiyoruz — sadece gerekli bilgiler.</span></p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title"><span data-lang-inline="de">Antrag erhalten</span><span data-lang-inline="tr">Başvuruyu alın</span></div><p class="step-text"><span data-lang-inline="de">Innerhalb von 48 Stunden erhalten Sie Ihren fertig ausgefüllten Antrag als PDF.</span><span data-lang-inline="tr">48 saat içinde doldurulmuş başvurunuzu PDF olarak alırsınız.</span></p></div>
+    </div>
+  </div>
+
+  <!-- BLOG BÖLÜMÜ -->
+  <div class="blog-section">
+    <div class="blog-title" data-lang-inline="de">📘 Wissen & Ratgeber</div>
+    <div class="blog-title" data-lang-inline="tr">📘 Bilgi & Rehber</div>
+    <div class="blog-sub" data-lang-inline="de">Kompakt erklärt – für Ihre Anträge</div>
+    <div class="blog-sub" data-lang-inline="tr">Kompakt açıklamalı – başvurularınız için</div>
+
+    <div class="blog-grid">
+      <div class="blog-card"><h4>Rentenbescheid prüfen – So erkennen Sie Fehler</h4><p>Was tun, wenn die Rente zu niedrig ist? Eine Checkliste für Betroffene.</p><a href="/blog/rentenbescheid-pruefen.html" class="blog-link">Mehr erfahren →</a></div>
+      <div class="blog-card"><h4>Grundrente beantragen – Ein Leitfaden</h4><p>Wer Anspruch hat, welche Unterlagen nötig sind.</p><a href="/blog/grundrente-beantragen.html" class="blog-link">Mehr erfahren →</a></div>
+      <div class="blog-card"><h4>Pflegegrad Widerspruch – So erhöhen Sie Ihre Chancen</h4><p>Bei zu niedrigem Pflegegrad: Muster und Tipps.</p><a href="/blog/pflegegrad-widerspruch.html" class="blog-link">Mehr erfahren →</a></div>
+      <div class="blog-card"><h4>Kindergeld für ausländische Kinder</h4><p>Rechte türkischstämmiger Familien in Deutschland.</p><a href="/blog/kindergeld-auslaendische-kinder.html" class="blog-link">Mehr erfahren →</a></div>
+      <div class="blog-card"><h4>Widerspruchsfristen – Was Sie unbedingt beachten müssen</h4><p>Ein Monat – und was danach passiert.</p><a href="/blog/widerspruch-fristen.html" class="blog-link">Mehr erfahren →</a></div>
+      <div class="blog-card"><h4>Erwerbsminderungsrente – Voraussetzungen & Antrag</h4><p>Wann Sie früher in Rente gehen können.</p><a href="/blog/erwerbsminderungsrente.html" class="blog-link">Mehr erfahren →</a></div>
+    </div>
+
+    <!-- MAKALELER İÇİN UYARI -->
+    <div class="disclaimer-makale">
+      <span data-lang-inline="de"><strong>📌 Rechtlicher Hinweis:</strong> Die Artikel auf dieser Seite ersetzen keine rechtliche oder medizinische Beratung. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt, das zuständige Amtsgericht oder Ihre Krankenkasse.</span>
+      <span data-lang-inline="tr"><strong>📌 Hukuki Uyarı:</strong> Bu sayfadaki makaleler hukuki veya tıbbi tavsiye yerine geçmez. Kesin bilgi için bir avukata, yetkili Sulh Mahkemesi'ne veya sağlık sigortanıza danışın.</span>
+    </div>
+
+    <div class="all-articles">
+      <h3 data-lang-inline="de">📖 Alle Ratgeber im Überblick</h3>
+      <h3 data-lang-inline="tr">📖 Tüm Rehberlere Genel Bakış</h3>
+      <div class="article-list">
+        <a href="/blog/rentenbescheid-pruefen.html">Rentenbescheid prüfen →</a>
+        <a href="/blog/grundrente-beantragen.html">Grundrente beantragen →</a>
+        <a href="/blog/pflegegrad-widerspruch.html">Pflegegrad Widerspruch →</a>
+        <a href="/blog/kindergeld-auslaendische-kinder.html">Kindergeld für ausländische Kinder →</a>
+        <a href="/blog/widerspruch-fristen.html">Widerspruchsfristen →</a>
+        <a href="/blog/erwerbsminderungsrente.html">Erwerbsminderungsrente →</a>
+        <a href="/blog/rentenantrag.html">Rentenantrag (Hauptseite) →</a>
+        <a href="/blog/pflegegrad.html">Pflegegrad Antrag →</a>
+        <a href="/blog/kindergeld.html">Kindergeld Antrag →</a>
+        <a href="/blog/widerspruch.html">Widerspruch einlegen →</a>
       </div>
     </div>
   </div>
 
-  <!-- TRUST -->
   <div class="trust">
-    <div class="trust-item">
-      <span class="trust-icon">🔒</span>
-      <span data-lang-inline="de">DSGVO-konform</span>
-      <span data-lang-inline="tr">DSGVO uyumlu</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-icon">🇩🇪</span>
-      <span data-lang-inline="de">Deutsch & Türkisch</span>
-      <span data-lang-inline="tr">Almanca & Türkçe</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-icon">⏱</span>
-      <span data-lang-inline="de">48h Liefergarantie</span>
-      <span data-lang-inline="tr">48 saat garanti</span>
-    </div>
-    <div class="trust-item">
-      <span class="trust-icon">✉️</span>
-      <span data-lang-inline="de">Persönliche Betreuung</span>
-      <span data-lang-inline="tr">Kişisel destek</span>
-    </div>
+    <div class="trust-item"><span class="trust-icon">🔒</span><span data-lang-inline="de">DSGVO-konform</span><span data-lang-inline="tr">DSGVO uyumlu</span></div>
+    <div class="trust-item"><span class="trust-icon">🇩🇪</span><span data-lang-inline="de">Deutsch & Türkisch</span><span data-lang-inline="tr">Almanca & Türkçe</span></div>
+    <div class="trust-item"><span class="trust-icon">⏱</span><span data-lang-inline="de">48h Liefergarantie</span><span data-lang-inline="tr">48 saat garanti</span></div>
+    <div class="trust-item"><span class="trust-icon">✉️</span><span data-lang-inline="de">Persönliche Betreuung</span><span data-lang-inline="tr">Kişisel destek</span></div>
   </div>
 
-  <!-- ORDER FORM -->
   <div class="order-section">
-    <h2 class="order-title">
-      <span data-lang-inline="de">Jetzt Anfrage stellen</span>
-      <span data-lang-inline="tr">Hemen talep oluşturun</span>
-    </h2>
-    <p class="order-sub">
-      <span data-lang-inline="de">Wählen Sie Ihren Weg — wir melden uns innerhalb von 2 Stunden.</span>
-      <span data-lang-inline="tr">İletişim yönteminizi seçin — 2 saat içinde size dönüyoruz.</span>
-    </p>
+    <h2 class="order-title"><span data-lang-inline="de">Jetzt Anfrage stellen</span><span data-lang-inline="tr">Hemen talep oluşturun</span></h2>
+    <p class="order-sub"><span data-lang-inline="de">Wählen Sie Ihren Weg — wir melden uns innerhalb von 2 Stunden.</span><span data-lang-inline="tr">İletişim yönteminizi seçin — 2 saat içinde size dönüyoruz.</span></p>
 
-    <!-- CONTACT OPTIONS -->
     <div class="contact-options">
       <a href="https://wa.me/4915219174601?text=Hallo%2C%20ich%20ben%C3%B6tige%20Hilfe%20bei%20meinem%20Antrag%20(wasstehtmirzu.com)" class="contact-btn" target="_blank">
         <span class="contact-btn-icon">💬</span>
-        <div>
-          <div class="contact-btn-text">WhatsApp</div>
-          <div class="contact-btn-sub">
-            <span data-lang-inline="de">Direkt schreiben</span>
-            <span data-lang-inline="tr">Direkt yazın</span>
-          </div>
-        </div>
+        <div><div class="contact-btn-text">WhatsApp</div><div class="contact-btn-sub"><span data-lang-inline="de">Direkt schreiben</span><span data-lang-inline="tr">Direkt yazın</span></div></div>
       </a>
       <a href="mailto:service@wasstehtmirzu.com" class="contact-btn">
         <span class="contact-btn-icon">✉️</span>
-        <div>
-          <div class="contact-btn-text">E-Mail</div>
-          <div class="contact-btn-sub">
-            <span data-lang-inline="de">service@wasstehtmirzu.com</span>
-            <span data-lang-inline="tr">service@wasstehtmirzu.com</span>
-          </div>
-        </div>
+        <div><div class="contact-btn-text">E-Mail</div><div class="contact-btn-sub">service@wasstehtmirzu.com</div></div>
       </a>
     </div>
 
-    <div class="divider">
-      <span data-lang-inline="de">oder Formular ausfüllen</span>
-      <span data-lang-inline="tr">veya formu doldurun</span>
-    </div>
+    <div class="divider"><span data-lang-inline="de">oder Formular ausfüllen</span><span data-lang-inline="tr">veya formu doldurun</span></div>
 
-    <!-- FORM -->
     <form action="https://formspree.io/f/xqeobrre" method="POST" onsubmit="handleSubmit(event)">
       <div class="form-grid">
-        <div class="form-row">
-          <label class="form-label">
-            <span data-lang-inline="de">Vorname & Nachname</span>
-            <span data-lang-inline="tr">Ad & Soyad</span>
-          </label>
-          <input type="text" name="name" class="form-input" required
-            placeholder="Max Mustermann">
-        </div>
-        <div class="form-row">
-          <label class="form-label">E-Mail</label>
-          <input type="email" name="email" class="form-input" required
-            placeholder="ihre@email.de">
-        </div>
+        <div class="form-row"><label class="form-label"><span data-lang-inline="de">Vorname & Nachname</span><span data-lang-inline="tr">Ad & Soyad</span></label><input type="text" name="name" class="form-input" required placeholder="Max Mustermann"></div>
+        <div class="form-row"><label class="form-label">E-Mail</label><input type="email" name="email" class="form-input" required placeholder="ihre@email.de"></div>
       </div>
-
-      <div class="form-row">
-        <label class="form-label">
-          <span data-lang-inline="de">Gewünschte Leistung</span>
-          <span data-lang-inline="tr">İstediğiniz hizmet</span>
-        </label>
+      <div class="form-row"><label class="form-label"><span data-lang-inline="de">Gewünschte Leistung</span><span data-lang-inline="tr">İstediğiniz hizmet</span></label>
         <select name="leistung" class="form-select" required>
-          <option value="">
-            -- Bitte wählen / Lütfen seçin --
-          </option>
+          <option value="">-- Bitte wählen / Lütfen seçin --</option>
           <option value="rente">Rentenantrag / Emeklilik Başvurusu (24,90 €)</option>
           <option value="pflege">Pflegegrad Antrag / Bakım Derecesi (24,90 €)</option>
           <option value="kindergeld">Kindergeld / Çocuk Parası (14,90 €)</option>
           <option value="widerspruch">Widerspruch / İtiraz Dilekçesi (44,90 €)</option>
         </select>
       </div>
-
-      <div class="form-row">
-        <label class="form-label">
-          <span data-lang-inline="de">Kurze Beschreibung Ihrer Situation</span>
-          <span data-lang-inline="tr">Durumunuzun kısa açıklaması</span>
-        </label>
-        <textarea name="beschreibung" class="form-textarea"
-          placeholder="z.B. Ich bin 67 Jahre alt, lebe in Berlin und möchte Grundrente beantragen..."></textarea>
-        <p class="form-note">
-          <span data-lang-inline="de">Keine persönlichen Dokumente bitte — nur eine kurze Schilderung.</span>
-          <span data-lang-inline="tr">Lütfen kişisel belge göndermeyin — kısa bir açıklama yeterli.</span>
-        </p>
+      <div class="form-row"><label class="form-label"><span data-lang-inline="de">Kurze Beschreibung Ihrer Situation</span><span data-lang-inline="tr">Durumunuzun kısa açıklaması</span></label>
+        <textarea name="beschreibung" class="form-textarea" placeholder="z.B. Ich bin 67 Jahre alt, lebe in Berlin und möchte Grundrente beantragen..."></textarea>
+        <p class="form-note"><span data-lang-inline="de">Keine persönlichen Dokumente bitte — nur eine kurze Schilderung.</span><span data-lang-inline="tr">Lütfen kişisel belge göndermeyin — kısa bir açıklama yeterli.</span></p>
       </div>
-
-      <button type="submit" class="submit-btn">
-        <span data-lang-inline="de">Anfrage absenden →</span>
-        <span data-lang-inline="tr">Talebi gönder →</span>
-      </button>
+      <button type="submit" class="submit-btn"><span data-lang-inline="de">Anfrage absenden →</span><span data-lang-inline="tr">Talebi gönder →</span></button>
     </form>
 
-    <p class="legal-note">
-      <span data-lang-inline="de">Dieser Service ist eine Ausfüllhilfe und stellt keine Rechtsberatung dar. · DSGVO-konform · AskMeAI Technologie Ltd. Şti.</span>
-      <span data-lang-inline="tr">Bu hizmet bir doldurma yardımıdır ve hukuki danışmanlık niteliği taşımaz. · DSGVO uyumlu · AskMeAI Teknoloji Ltd. Şti.</span>
-    </p>
+    <p class="legal-note"><span data-lang-inline="de">Dieser Service ist eine Ausfüllhilfe und stellt keine Rechtsberatung dar. · DSGVO-konform · AskMeAI Technologie Ltd. Şti.</span><span data-lang-inline="tr">Bu hizmet bir doldurma yardımıdır ve hukuki danışmanlık niteliği taşımaz. · DSGVO uyumlu · AskMeAI Teknoloji Ltd. Şti.</span></p>
   </div>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand">wasstehtmirzu.com · AskMeAI Teknoloji</div>
   <p class="footer-text">© 2026 AskMeAI Teknoloji Ltd. Şti. · Manisa, Türkiye · DSGVO / KVKK</p>
+  <div class="footer-disclaimer">
+    <span data-lang-inline="de">Die Inhalte dieser Seite ersetzen keine professionelle Rechts- oder Sozialberatung. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt oder die zuständige Behörde.</span>
+    <span data-lang-inline="tr">Bu sitedeki içerikler profesyonel hukuki veya sosyal danışmanlık yerine geçmez. Kesin bilgi için bir avukata veya ilgili resmi makama başvurun.</span>
+  </div>
   <p style="margin-top:0.75rem;font-size:0.78rem;">
     <a href="#" onclick="openModal('impressum')" style="color:rgba(212,175,55,0.6);text-decoration:none;margin-right:1.5rem;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(212,175,55,0.6)'">Impressum</a>
     <a href="#" onclick="openModal('datenschutz')" style="color:rgba(212,175,55,0.6);text-decoration:none;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(212,175,55,0.6)'">Datenschutzerklärung</a>
   </p>
 </footer>
 
-<!-- MODAL OVERLAY -->
 <div id="legal-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(4,22,46,0.92);z-index:1000;overflow-y:auto;padding:2rem 1rem;">
   <div style="max-width:720px;margin:0 auto;background:#0a2444;border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:2.5rem;position:relative;color:#F5F0E8;font-family:'Source Serif 4',Georgia,serif;line-height:1.8;">
     <button onclick="closeModal()" style="position:absolute;top:1.2rem;right:1.2rem;background:none;border:1px solid rgba(212,175,55,0.3);color:#D4AF37;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;">✕</button>
-
-    <!-- IMPRESSUM -->
-    <div id="modal-impressum">
-      <h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;letter-spacing:0.02em;">Impressum</h2>
-      <p style="font-size:0.82rem;color:rgba(212,175,55,0.5);margin-bottom:1.5rem;letter-spacing:0.1em;text-transform:uppercase;">Angaben gemäß § 5 TMG</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin-bottom:0.5rem;">Verantwortlich</h3>
-      <p>AskMeAI Teknoloji Ltd. Şti.<br>
-      Vertreten durch: Mehmet Aydınlı (Geschäftsführer)</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">Anschrift</h3>
-      <p>Bernauerstr. 115<br>
-      13507 Berlin<br>
-      Deutschland</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">Kontakt</h3>
-      <p>E-Mail: <a href="mailto:mehmet@askmeai.io" style="color:#D4AF37;">mehmet@askmeai.io</a></p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">Unternehmensregistrierung</h3>
-      <p>Eingetragen im türkischen Handelsregister (Ticaret Sicili)<br>
-      Registernummer: 23837 · Manisa TSO, Türkiye</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">Inhaltlich Verantwortlicher</h3>
-      <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
-      Mehmet Aydınlı, Bernauerstr. 115, 13507 Berlin</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">Haftungsausschluss</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.75);">Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Dieser Service ist eine Ausfüllhilfe und stellt keine Rechtsberatung dar. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr.</p>
-    </div>
-
-    <!-- DATENSCHUTZ -->
-    <div id="modal-datenschutz">
-      <h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;letter-spacing:0.02em;">Datenschutzerklärung</h2>
-      <p style="font-size:0.82rem;color:rgba(212,175,55,0.5);margin-bottom:1.5rem;letter-spacing:0.1em;text-transform:uppercase;">Gemäß DSGVO (EU) 2016/679</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin-bottom:0.5rem;">1. Verantwortlicher</h3>
-      <p>AskMeAI Teknoloji Ltd. Şti., vertreten durch Mehmet Aydınlı<br>
-      E-Mail: <a href="mailto:mehmet@askmeai.io" style="color:#D4AF37;">mehmet@askmeai.io</a></p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">2. Erhobene Daten & Zweck</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Bei der Nutzung dieser Website werden folgende Daten verarbeitet:</p>
-      <ul style="font-size:0.9rem;color:rgba(245,240,232,0.85);padding-left:1.5rem;margin-top:0.5rem;">
-        <li style="margin-bottom:0.4rem;"><strong style="color:#D4AF37;">Kontaktformular:</strong> Name, E-Mail-Adresse und Ihre Anfrage — ausschließlich zur Bearbeitung Ihrer Serviceanfrage (Art. 6 Abs. 1 lit. b DSGVO)</li>
-        <li style="margin-bottom:0.4rem;"><strong style="color:#D4AF37;">Google Analytics:</strong> Anonymisierte Nutzungsdaten (Seitenaufrufe, Verweildauer, Herkunft) zur Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO)</li>
-        <li><strong style="color:#D4AF37;">Google AdSense:</strong> Personalisierte Werbung auf Basis von Interessen und Nutzungsverhalten (Art. 6 Abs. 1 lit. a DSGVO — Einwilligung)</li>
-      </ul>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">3. Google Analytics</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Diese Website nutzt Google Analytics, einen Webanalysedienst der Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google Analytics verwendet Cookies. Die durch den Cookie erzeugten Informationen über Ihre Nutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen. Wir haben die IP-Anonymisierung aktiviert. Sie können die Erfassung durch Google Analytics verhindern, indem Sie das Browser-Add-on unter <a href="https://tools.google.com/dlpage/gaoptout" style="color:#D4AF37;" target="_blank">tools.google.com/dlpage/gaoptout</a> installieren.</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">4. Google AdSense</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Diese Website verwendet Google AdSense, einen Dienst zum Einbinden von Werbeanzeigen der Google LLC. Google AdSense verwendet Cookies und Web Beacons, um Informationen zu sammeln. Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" style="color:#D4AF37;" target="_blank">policies.google.com/privacy</a>.</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">5. Cookies</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Diese Website verwendet Cookies von Drittanbietern (Google Analytics, Google AdSense). Sie können Cookies in Ihrem Browser deaktivieren. Dies kann die Funktionalität der Website einschränken.</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">6. Ihre Rechte</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Zur Ausübung Ihrer Rechte wenden Sie sich an: <a href="mailto:mehmet@askmeai.io" style="color:#D4AF37;">mehmet@askmeai.io</a></p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">7. Speicherdauer</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Kontaktformular-Daten werden nach abgeschlossener Bearbeitung gelöscht, spätestens nach 6 Monaten. Google-Daten unterliegen den Löschfristen von Google.</p>
-
-      <h3 style="color:#D4AF37;font-size:1rem;margin:1.5rem 0 0.5rem;">8. Beschwerderecht</h3>
-      <p style="font-size:0.9rem;color:rgba(245,240,232,0.85);">Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist die Berliner Beauftragte für Datenschutz und Informationsfreiheit.</p>
-
-      <p style="margin-top:2rem;font-size:0.8rem;color:rgba(212,175,55,0.35);border-top:1px solid rgba(212,175,55,0.1);padding-top:1rem;">Stand: Juni 2026</p>
-    </div>
-
+    <div id="modal-impressum"><h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;">Impressum</h2><p>AskMeAI Teknoloji Ltd. Şti. · Bernauerstr. 115, 13507 Berlin · mehmet@askmeai.io</p></div>
+    <div id="modal-datenschutz"><h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;">Datenschutzerklärung</h2><p>Es gelten die gesetzlichen Bestimmungen der DSGVO. Bei Fragen kontaktieren Sie mehmet@askmeai.io.</p></div>
   </div>
 </div>
 
 <script>
-  // MODAL
   function openModal(type) {
     document.getElementById('modal-impressum').style.display = type === 'impressum' ? 'block' : 'none';
     document.getElementById('modal-datenschutz').style.display = type === 'datenschutz' ? 'block' : 'none';
@@ -1037,18 +870,14 @@
     document.getElementById('legal-modal').style.display = 'none';
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
-  // LANGUAGE DETECTION & SWITCHING
   function setLang(lang) {
     document.getElementById('body-root').className = 'lang-' + lang;
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
   }
 
-  // AUTO DETECT
   (function() {
     const browserLang = navigator.language || navigator.userLanguage || 'de';
     if (browserLang.startsWith('tr')) {
@@ -1059,7 +888,6 @@
     }
   })();
 
-  // FORM SUBMIT
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
