@@ -807,23 +807,10 @@
 <footer class="footer">
   <div class="footer-brand">wasstehtmirzu.com · AskMeAI Teknoloji</div>
   <p class="footer-text">© 2026 AskMeAI Teknoloji Ltd. Şti. · Manisa, Türkiye · DSGVO / KVKK</p>
-  <div class="footer-disclaimer">
-    <span data-lang-inline="de">Die Inhalte dieser Seite ersetzen keine professionelle Rechts- oder Sozialberatung. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt oder die zuständige Behörde.</span>
-    <span data-lang-inline="tr">Bu sitedeki içerikler profesyonel hukuki veya sosyal danışmanlık yerine geçmez. Kesin bilgi için bir avukata veya ilgili resmi makama başvurun.</span>
-  </div>
-  <p style="margin-top:0.75rem;font-size:0.78rem;">
-    <a href="#" onclick="openModal('impressum')" style="color:rgba(212,175,55,0.6);text-decoration:none;margin-right:1.5rem;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(212,175,55,0.6)'">Impressum</a>
-    <a href="#" onclick="openModal('datenschutz')" style="color:rgba(212,175,55,0.6);text-decoration:none;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(212,175,55,0.6)'">Datenschutzerklärung</a>
-  </p>
+  <div><a href="https://wasstehtmirzu.com/legal.html" style="color:rgba(212,175,55,0.6);text-decoration:none;margin:0 .6rem;" onmouseover="this.style.color=&apos;#D4AF37&apos;" onmouseout="this.style.color=&apos;rgba(212,175,55,0.6)&apos;">Impressum &amp; Datenschutz</a></div>
 </footer>
 
-<div id="legal-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(4,22,46,0.92);z-index:1000;overflow-y:auto;padding:2rem 1rem;">
-  <div style="max-width:720px;margin:0 auto;background:#0a2444;border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:2.5rem;position:relative;color:#F5F0E8;font-family:'Source Serif 4',Georgia,serif;line-height:1.8;">
-    <button onclick="closeModal()" style="position:absolute;top:1.2rem;right:1.2rem;background:none;border:1px solid rgba(212,175,55,0.3);color:#D4AF37;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;">✕</button>
-    <div id="modal-impressum"><h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;">Impressum</h2><p>AskMeAI Teknoloji Ltd. Şti. · Bernauerstr. 115, 13507 Berlin · mehmet@askmeai.io</p></div>
-    <div id="modal-datenschutz"><h2 style="font-family:'Playfair Display',serif;color:#D4AF37;font-size:1.6rem;margin-bottom:1.5rem;">Datenschutzerklärung</h2><p>Es gelten die gesetzlichen Bestimmungen der DSGVO. Bei Fragen kontaktieren Sie mehmet@askmeai.io.</p></div>
-  </div>
-</div>
+
 
 <script>
   // Dil verileri
@@ -973,18 +960,6 @@
     if (lang === 'de') document.querySelectorAll('.lang-btn')[0].classList.add('active');
     else document.querySelectorAll('.lang-btn')[1].classList.add('active');
     renderBlog(lang);
-  }
-
-  function openModal(type) {
-    document.getElementById('modal-impressum').style.display = type === 'impressum' ? 'block' : 'none';
-    document.getElementById('modal-datenschutz').style.display = type === 'datenschutz' ? 'block' : 'none';
-    document.getElementById('legal-modal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    return false;
-  }
-  function closeModal() {
-    document.getElementById('legal-modal').style.display = 'none';
-    document.body.style.overflow = '';
   }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
