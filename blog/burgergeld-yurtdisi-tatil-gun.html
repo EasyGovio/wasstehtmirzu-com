@@ -22,6 +22,17 @@
   sessionStorage.setItem('autoLang', lang);
 })();
 </script>
+    <script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('beta') === 'pacdi2026') {
+    try { sessionStorage.setItem('betaUnlock', '1'); } catch(e) {}
+  }
+  window.isBetaUnlocked = function() {
+    try { return sessionStorage.getItem('betaUnlock') === '1'; } catch(e) { return false; }
+  };
+})();
+</script>
 </head>
 <body style="font-family:'Source Serif 4',Georgia,serif;max-width:860px;margin:0 auto;padding:2rem 1.5rem;background:#F5F0E8;color:#1a1a2e;">
 <!--
