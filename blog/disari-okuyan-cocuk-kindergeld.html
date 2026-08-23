@@ -149,6 +149,23 @@
   });
 })();
 </script>
+    <style id="viewportLock">html,body{overscroll-behavior:none;}</style>
+<script>
+(function(){
+  function lockCanvases(){
+    document.querySelectorAll('canvas').forEach(function(c){
+      c.style.touchAction = 'none';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', lockCanvases);
+  } else {
+    lockCanvases();
+  }
+  var mo = new MutationObserver(lockCanvases);
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </head>
 <body style="font-family:'Source Serif 4',Georgia,serif;max-width:860px;margin:0 auto;padding:2rem 1.5rem;background:#F5F0E8;color:#1a1a2e;">
 <!--
